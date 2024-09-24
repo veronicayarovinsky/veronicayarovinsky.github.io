@@ -1,5 +1,6 @@
 ---
 layout: default
+style: custom-style.css
 ---
 
 <style>
