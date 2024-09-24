@@ -1,21 +1,26 @@
-@import "{{ site.theme }}";
+@import 'jekyll-theme-cayman';
 
-/* :root {
-  --theme-foreground-focus: green;
-} */
+// $section-headings-color: #0c3b24 !default;
+// // $section-headings-color: #159957 !default;
+// $body-text-color: #606c71 !default;
+// $body-link-color: #1e6bb8 !default;
 
-body {
-    font-family: var(--sans-serif);
-}
+// :root {
+//    --theme-foreground-focus: green;
+// }
+
+// body {
+//     font-family: var(--sans-serif);
+// }
   
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: var(--manrope);
-}
-/* h6 {
-    font-family: var(--serif);
-} */
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//     font-family: var(--manrope);
+// }
+// /* h6 {
+//     font-family: var(--serif);
+// } */

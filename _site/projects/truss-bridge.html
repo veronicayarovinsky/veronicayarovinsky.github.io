@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Truss Bridge | Veronica’s Projects</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Truss Bridge" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="welcome!" />
+<meta property="og:description" content="welcome!" />
+<link rel="canonical" href="http://localhost:4000/projects/truss-bridge.html" />
+<meta property="og:url" content="http://localhost:4000/projects/truss-bridge.html" />
+<meta property="og:site_name" content="Veronica’s Projects" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Truss Bridge" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"welcome!","headline":"Truss Bridge","url":"http://localhost:4000/projects/truss-bridge.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- You can set your favicon here -->
+<link rel="icon" href="/img/initials.png" type="image/png" sizes="32x32">
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <!-- <header class="page-header" role="banner">
+      <h1 class="project-name">Truss Bridge</h1>
+      <h2 class="project-tagline">welcome!</h2>
+      
+      
+    </header> -->
+
+    <nav-top>
+        <div>
+            <img alt="name" class="img-name" src="../img/name.png" />
+          </div>
+          <div>
+            <a href="/" class="nav-top-link">Home</a>
+            <a href="/all-projects" class="nav-top-link">All Projects</a>
+            <a href="https://drive.google.com/file/d/1DhDlnxbqNxdRu2_kfNmlH-GAUpnMz6dX/view?usp=sharing" class="nav-top-link">Resume</a>
+            <a href="https://www.linkedin.com/in/veronica-yarovinsky/" class="nav-top-link" target="_blank">LinkedIn</a>
+          </div>
+    </nav-top>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="truss-bridge">Truss Bridge</h1>
+
+<p>Our team of three created a paper truss bridge and estimated its strength and failure points. This was the term-long project for my solid mechanics course at Dartmouth College. My team and I were challenged with designing, analyzing, and testing a structurally sound bridge. We were further challenged with using manilla folders as a building material.</p>
+
+<hr />
+
+<h2 id="design-process">Design Process</h2>
+
+<p>We iterated through multiple bridge designs, shown below. We modeled each in SolidWorks, hand-calculated the compression and tension forces of the side truss structure, performed FEA simulations, and adjuted our design based on the learnings.</p>
+
+<div>
+    <img alt="Design Iterations" width="70%" src="../img/truss-bridge/design-iterations.png" />
+</div>
+
+<hr />
+
+<h2 id="final-design">Final Design</h2>
+
+<p>Our final, built design is shown below.</p>
+
+<div>
+    <img alt="Fully Assembled Bridge" width="70%" src="../img/truss-bridge/fully-assembled-bridge.png" />
+</div>
+
+<hr />
+
+<h2 id="solidworks-model">SolidWorks Model</h2>
+
+<p>The final design for our bridge, as modeled in SolidWorks:</p>
+
+<div>
+    <img alt="CAD model final" width="70%" src="../img/truss-bridge/CAD-model-final.png" />
+</div>
+
+<p>Our final model included a lattice inspired tension design at the top. We noticed from past simulations that the top compressive members at the arch were getting pushed down as we increased the load applied, requiring a tension force at the top to alleviate the stress on the compressive members.</p>
+
+<p>We created a custom material in SolidWorks to more accurately model the properties of the manila paper we were using as our material. Through tensile tests and compression tests, we found that the Young’s Modulus for manilla paper is 1.05E-10. The material properties of manila had to be separately applied to the custom members we dimensioned for the weldments features by applying a path for Weldments profile to find. Providing Weldments with a path required solidworks to view our one bridge body to be completely made out of manila folder paper.</p>
+
+<hr />
+
+<h2 id="fea-analysis">FEA Analysis</h2>
+
+<p>CAD simulation for finding the maximum amount of stress the bridge can hold:</p>
+
+<div>
+    <img alt="CAD sim" width="70%" src="../img/truss-bridge/CAD-sim.png" />
+</div>
+
+<p>We used SolidWorks FEA analysis to perform deflection and stress tests, ensuring our bridge met the project’s minimum weight loading requirements. This approach enabled us to virtually iterate on our design, resulting in the highest load-bearing-to-weight ratio of all eight groups in our class.</p>
+
+<hr />
+
+<h2 id="built-design">Built Design</h2>
+
+<p>Point of failure during testing:</p>
+
+<div>
+    <img alt="failure-point" width="70%" src="../img/truss-bridge/failure-point.png" />
+</div>
+
+<p>During testing, the bridge broke at the 8mm x 8mm crossmembers of the deck. The shear force was evenly split between the two central crossmembers, this is evidenced above by the resulting step offs at the edge of the side member. The members buckled after the application of the load changed once the provided deck cracked.</p>
+
+<hr />
+
+<h2 id="final-report">Final Report</h2>
+
+<p><a href="https://drive.google.com/file/d/1Z7scb8cWfSEA4zsg4Kii4mdTYNROgDUh/view?usp=sharing">Link to Final Report</a></p>
+
+<p><br /></p>
+
+<p><a href="./">&lt; back</a></p>
+
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">© Built by Veronica Yarovinsky.</span>
+        <!-- <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span> -->
+      </footer>
+    </main>
+  </body>
+</html>
