@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>PCBA for Airplane Takeoff &amp; Landing Metrics - STOLmate | Veronica’s Projects</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="PCBA for Airplane Takeoff &amp; Landing Metrics - STOLmate" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/stolmate.html" />
+<meta property="og:url" content="http://localhost:4000/stolmate.html" />
+<meta property="og:site_name" content="Veronica’s Projects" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="PCBA for Airplane Takeoff &amp; Landing Metrics - STOLmate" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"PCBA for Airplane Takeoff &amp; Landing Metrics - STOLmate","url":"http://localhost:4000/stolmate.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- You can set your favicon here -->
+<link rel="icon" href="/img/initials-light.png" type="image/png" sizes="32x32">
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <!-- <header class="page-header" role="banner">
+      <h1 class="project-name">PCBA for Airplane Takeoff & Landing Metrics - STOLmate</h1>
+      <h2 class="project-tagline"></h2>
+      
+      
+    </header> -->
+
+    <nav-top>
+        <div>
+            <img alt="name" class="img-name" src="../img/name-light.png" />
+          </div>
+          <div>
+            <!-- <a href="/" class="nav-top-link">Projects</a> -->
+            <!-- <a href="/all-projects" class="nav-top-link">All Projects</a> -->
+            <a href="https://drive.google.com/file/d/15JUUb-unKsD45XjS8m9gMPz3dqdH8uvw/view?usp=sharing" class="nav-top-link">Resume</a>
+            <a href="https://www.linkedin.com/in/veronica-yarovinsky/" class="nav-top-link" target="_blank">LinkedIn</a>
+          </div>
+    </nav-top>
+
+    <main id="content" class="main-content" role="main">
+      <p><a href="./"><strong>&lt; back to projects page</strong></a></p>
+
+<h1 id="pcba-for-airplane-takeoff--landing-metrics---stolmate">PCBA for Airplane Takeoff &amp; Landing Metrics - STOLmate</h1>
+
+<p>I designed a custom microcontroller-based PCB – integrating a TOF sensor interface, wireless data transmission, and battery charging – based on the previous generation development board-based prototype. I developed embedded firmware, then programmed and validated performance of the PCB.</p>
+
+<p>This project was part of my work for my engineering capstone project. I focused on the hardware design aspects of the project, and my contributions to the project involved:</p>
+<ul>
+  <li>PCB design (solely responsible)</li>
+  <li>firmware development</li>
+  <li>sensor &amp; accelerometer testing to inform future hardware development</li>
+</ul>
+
+<p><br /></p>
+<h3>Background</h3>
+
+<div class="row">
+  <div class="column">
+    <p><b>Short Take-Off and Landing</b> performance measures an aircraft’s ability to minimize the runway distance required for takeoff and landing. This diagram illustrates the 3 STOL measurements reported to the user:</p>
+    <ul>
+        <li>takeoff ground roll</li>
+        <li>landing ground roll</li>
+        <li>overshoot</li>
+    </ul>
+  </div>
+  <div class="column">
+    <img src="img/stolmate/stolemate-stol-measurements-diagram.png" alt="stolemate-stol-measurements-diagram" style="width:100%" />
+  </div>
+</div>
+<p><br /></p>
+
+<p>STOLmate is the first commercially-available device to enable pilots to train for STOL competitions by determining their takeoff and landing performance independently, and STOLmate 2.0 (what I worked on) enhances the features of the pre-existing model.</p>
+
+<hr />
+
+<h3>PCB Functional Requirements</h3>
+
+<ul>
+  <li>Garmin Lidar compatibility</li>
+  <li>Incorporates Accelerometer</li>
+  <li>Bluetooth functionality</li>
+  <li>LED indicators for power &amp; charging</li>
+  <li>Battery-powered</li>
+  <li>Tracks battery charge %</li>
+  <li>USB-C charging</li>
+  <li>Bluetooth data transmission functionality</li>
+  <li>Fits within constraints of existing casing design</li>
+  <li>Minimizes part count</li>
+</ul>
+
+<p><b>Other Considerations</b></p>
+<ul>
+    <li>Mechanical Constraints</li>
+    <li>DFM / DFA</li>
+    <li>Regulatory Compliance</li>
+    <li>Cost</li>
+</ul>
+
+<h3>Block Diagram of PCB Architecture</h3>
+<p>The diagram below shows the functional blocks of the design.</p>
+
+<div>
+    <img src="img/stolmate/stolmate-blockdiagram-pcb-architecture.png" alt="Block Diagram of PCB Architecture" style="width:100%" />
+</div>
+<p><br /></p>
+
+<h3>The PCB is a 4-layer impedance-controlled design</h3>
+<div>
+    <img src="img/stolmate/stolmate-pcb-stackup.png" alt="stolmate-pcb-stackup" style="width:100%" />
+</div>
+
+<div class="row">
+  <div class="column">
+    <h4>Signal Layer</h4>
+    <img src="img/stolmate/stolmate-pcb-signal-layer.png" alt="stolmate-pcb-signal-layer" style="width:68%" />
+  </div>
+  <div class="column">
+    <h4>Power Plane</h4>
+    <img src="img/stolmate/stolmate-pcb-power-plane.png" alt="stolmate-pcb-power-plane" style="width:100%" />
+  </div>
+</div>
+<p><br /></p>
+
+<div class="row">
+  <div class="column">
+    <h3>PCB Layout &amp; Routing Considerations</h3>
+    <ul>
+        <li>EMI</li>
+        <li>Noise</li>
+        <li>Crosstalk</li>
+    </ul>
+    <ul>
+        <li>Separation of analog &amp; digital signals</li>
+        <li>High-frequency signals</li>
+        <li>High-speed signal routing</li>
+    </ul>
+  </div>
+  <div class="column">
+    <img src="img/stolmate/stolmate-layout-methodology.png" alt="stolmate-layout-methodology" style="width:60%" />
+  </div>
+</div>
+<p><br /></p>
+
+<h3>Mechanical constraints</h3>
+<p>Board shape &amp; connector placement determined by mechanical constraints</p>
+<div>
+    <img src="img/stolmate/stolmate-3D-mechanical.png" alt="stolmate-3D-mechanical" style="width:100%" />
+</div>
+<p><br /></p>
+
+<p><strong>PCBA recieved from the manufacturer (JLCPCB)</strong></p>
+
+<div class="row">
+  <div class="column">
+    <img src="img/stolmate/stolmate-pcb-front.jpeg" alt="stolmate-pcb-front" style="width:92%" />
+  </div>
+  <div class="column">
+    <img src="img/stolmate/stolmate-pcb-back.jpeg" alt="stolmate-pcb-back" style="width:100%" />
+  </div>
+</div>
+<p><br /></p>
+
+<p><br /></p>
+
+<p><a href="./"><strong>&lt; back to projects page</strong></a></p>
+
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">© Built by Veronica Yarovinsky.</span>
+        <!-- <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span> -->
+      </footer>
+    </main>
+  </body>
+</html>

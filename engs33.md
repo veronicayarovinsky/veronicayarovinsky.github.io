@@ -4,7 +4,19 @@ layout: default
 style: ../assets/css/style.scss
 ---
 
+[**< back to projects page**](./)
+
 # Truss Bridge
+
+Designed, analyzed, and built in a ten-week solid mechanics course, this bridge is a scaled-down model of a pedestrian truss bridge. The goals of the project were to create the most economic bridge that can withstand 1kN of applied force and to accurately predict deformation and maximum load through finite element analysis (FEA) and hand-calculations, respectively.
+
+This bridge received the highest marks in the class as it best met the economic requirement (used least material of all bridges) and most accurately predicted the deformation using FEA (4.7% error).
+
+My responsibilities in the project included mechanical design, piece and assembly modeling in SOLIDWORKS, FEA for deformation, and assembling the physical bridge.
+
+
+--------
+
 
 Our team of three created a paper truss bridge and estimated its strength and failure points. This was the term-long project for my solid mechanics course at Dartmouth College. My team and I were challenged with designing, analyzing, and testing a structurally sound bridge. We were further challenged with using manilla folders as a building material.
 

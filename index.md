@@ -4,9 +4,6 @@ style: ../assets/css/style.scss
 ---
 
 
-<!-- <div class="hero">
-    <h1>Hi! I'm Veronica</h1>
-</div> -->
 
 <intro>
     <div>
@@ -19,65 +16,73 @@ style: ../assets/css/style.scss
 </intro>
 
 
-
+<!-- =================================== -->
+<!-- -------- FEATURED PROJECTS -------- -->
+<!-- =================================== -->
 <div class="hero">
   <br>
     <h2>Featured Projects</h2>
 </div>
 
-
+<!-- STOLMATE -->
 <div class="grid grid-cols-2">
     <a href="/stolmate" class="card">
-      <img alt="Card image cap" class="card-img-top img-fluid" src="img/stolmate/stolmate-pcb-cropped.png" />
+      <img alt="Card image cap" class="card-img-top img-fluid" src="img/stolmate/stolmate-pcb-front.jpeg" />
       <div class="card-block">
         <h3 class="card-title">PCBA for Airplane Takeoff & Landing Metrics - STOLmate</h3>
-        <p class="card-text">I designed a PCB — integrating STM32WB microcontroller, Bluetooth antenna, USB-C charging, accelerometer, and TOF sensor interface – based on the previous generation development board-based prototype. I developed embedded firmware and bench-tested the PCB.</p>
+        <p class="card-text">I designed a custom microcontroller-based PCB – integrating a TOF sensor interface, wireless data transmission, and battery charging – based on the previous generation development board-based prototype. I developed embedded firmware, then programmed and validated performance of the PCB.</p>
       </div>
     </a>
 
+<!-- DHE -->
   <a href="/dhe" class="card">
     <img alt="Card image cap" class="card-img-top img-fluid" src="img/dhe/dhe-1.png" />
     <div class="card-block">
       <h3 class="card-title">Solar Water Heating System in Uganda – Dartmouth Humanitarian Engineering</h3>
-      <p class="card-text">Built and operating in Uganda</p>
+      <p class="card-text">With a team of 3, I designed and built a novel locally-sourced off-grid solar water heating system for cooking at Uganda Christian University. The system is currently operating in Uganda.</p>
     </div>
   </a>
 
+<!-- DFR Discharge Board -->
   <a href="/dfr" class="card">
     <img alt="Card image cap" class="card-img-top img-fluid" src="img/dfr/discharge-pcb-in-car-cropped.png" />
     <div class="card-block">
       <h3 class="card-title">High Power Discharge PCB – Dartmouth Formula Racing</h3>
-      <p class="card-text">I designed a high-voltage discharge safety PCB for a Formula Hybrid electric racecar to meet FSAE rules for tractive system safety. The board interfaces with high-voltage and low-voltage subsystems and is located in the car's junction box.
+      <p class="card-text">I designed this PCB for the Dartmouth Formula Racing (DFR) electric car to connect the high-voltage and low-voltage subsystems internal and external to the car's junction box and to meet FSAE rules for tractive system safety.
       </p>
     </div>
   </a>
 
+<!-- EDA Inverter -->
   <a href="/eda" class="card">
     <img alt="Card image cap" class="card-img-top img-fluid" src="img/eda/eda-pcb1.png" />
     <div class="card-block">
       <h3 class="card-title">Split-phase Grid-tied High-Power Inverter</h3>
-      <p class="card-text">For residential load-shedding battery system</p>
+      <p class="card-text">I designed a grid-tied split-phase 3kVA inverter for a residential load-shedding battery system. I modeled the design in Simulink for efficiency and cost optimization, ensured compliance with UL 1741 standards, and routed the PCB, then assembled and tested it.</p>
     </div>
   </a>
 
 </div>
 <br>
 
-<!-- [view more projects   >](./all-projects.html) -->
-
+<!-- ================================= -->
+<!-- -------- COURSE PROJECTS -------- -->
+<!-- ================================= -->
 <div class="hero">
     <h2>Course Projects</h2>
 </div>
 
+<!-- ENGS 125 - Audio Amplifier -->
 <div class="grid grid-cols-3">
   <a href="/engs125" class="card">
-    <img alt="Card image cap" class="card-img-top img-fluid" src="img/audio-amplifier/engs125-pcb.png" />
+    <img alt="Card image cap" class="card-img-top img-fluid" src="img/engs125/engs125-pcb.png" />
     <div class="card-block">
-      <h3 class="card-title">Class-D Audio Amplifier Buck Converter</h3>
+      <h3 class="card-title">Class-D Audio Amplifier</h3>
       <p class="card-text">I designed, simulated, built, and tested a Class-D amplifier using a buck converter topology to deliver high-efficiency audio output to a 4 Ω speaker. The design achieved over 96% peak efficiency and clean tracking of a sinusoidal audio input from 100 Hz to 20 kHz.</p>
     </div>
   </a>
 
+<!-- ENGS 61 - Heterodyne AM Radio Receiver -->
   <a href="/engs61" class="card">
     <img alt="Card image cap" class="card-img-top img-fluid" src="img/engs61/engs61-breadboard-cropped.png" />
     <div class="card-block">
@@ -86,6 +91,7 @@ style: ../assets/css/style.scss
     </div>
   </a>
 
+<!-- ENGS 26 - Duck Car Compensator Design -->
   <a href="/engs26" class="card">
     <img alt="Card image cap" class="card-img-top img-fluid" src="img/engs26/engs26-full-car.png" />
     <div class="card-block">
@@ -94,15 +100,17 @@ style: ../assets/css/style.scss
       </p>
     </div>
   </a>
-  
+
+<!-- ENGS 75 - Looma -->
   <a href="/looma" class="card">
         <img alt="Card image cap" class="card-img-top img-fluid" src="img/looma/wiring-diagram.png" />
         <div class="card-block">
         <h3 class="card-title">Looma Electrical Redesign</h3>
-        <p class="card-text">System & PCB Design of Looma Educational System</p>
+        <p class="card-text">I defined electrical and mechanical requirements for a Raspberry Pi CM4-based educational device, then designed schematics for a custom motherboard integrating power management, audio, and peripheral interfaces.</p>
         </div>
     </a>
 
+<!-- ENGS 33 - Truss Bridge -->
   <a href="/engs33" class="card">
     <img alt="Card image cap" class="card-img-top img-fluid" src="img/truss-bridge/fully-assembled-bridge.png" />
     <div class="card-block">
