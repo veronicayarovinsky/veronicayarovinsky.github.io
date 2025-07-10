@@ -113,10 +113,11 @@ intro {
 }
 
 .img-headshot {
-  width: 400px;
-  height: 16vw;
+  width: 32rem;
+  //height: 16vw;
   object-fit: cover;
-  padding-left: 4vw;
+  padding-left: 3rem;
+  //padding-right: 1.8rem;
   //padding-right: 5.8rem;
   //align-self: right;
 }
@@ -231,7 +232,8 @@ intro {
 }
 
 .hero h1 {
-    margin: 1rem 1;
+    // margin: 1rem 1;
+    margin: 0 0;
     text-align: left;
     font-size: 40px;
     font-weight: bold;
@@ -249,18 +251,29 @@ intro {
     font-size: 28px;
     font-style: initial;
     font-weight: bold;
-    line-height: 1.5;
+    //line-height: 1.5;
     color: $card-title-color;
     padding: 0 0.8rem;
 }
 
 .hero h3 {
-  margin: 0;
+  // margin: 0.2rem 0;
   max-width: 34em;
   font-size: 24px;
   font-style: initial;
   font-weight: medium;
-  line-height: 1.5;
+  line-height: 1;
+  color: $card-title-color;
+  padding: 0 0.8rem;
+}
+
+.hero h4 {
+  margin: 0;
+  max-width: 34em;
+  font-size: 20px;
+  font-style: initial;
+  font-weight: medium;
+  line-height: 1;
   color: $card-title-color;
   //padding: 0 0.8rem;
 }
@@ -281,6 +294,7 @@ intro {
     width: 100%;
     height: 24vw;
     object-fit: cover;
+    padding-top: 0.8rem;
 }
 
 .card-img-left {
@@ -298,7 +312,7 @@ intro {
     text-decoration: none; /* Remove underline from link */
     background-color: $card-color;
     //padding: 0.8rem;
-    padding: 0.8rem;
+    padding: 0 0.8rem;
     //color: inherit; /* Ensure text color is inherited from parent */
 }
 
@@ -311,7 +325,7 @@ intro {
 }
 
 .card-block {
-    padding: 0.4rem;
+    padding: 0.4rem 0 0;
 }
 
 .card-title {
@@ -322,8 +336,16 @@ intro {
     color: $card-title-color;
 }
 
+.card-subtitle {
+  margin: 0 0 0 0;       /* top | right | bottom | left */
+  font-size: 1rem;
+  //font-weight: bold;
+  padding: 0;
+  color: $card-title-color;
+}
+
 .card-text {
-    margin: 0.2rem 0;
+    //margin: 0.2rem 0;
     font-size: 1rem;
     color: $body-text-color;
 }

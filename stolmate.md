@@ -40,29 +40,45 @@ STOLmate is the first commercially-available device to enable pilots to train fo
 ----------
 
 <h3>PCB Functional Requirements</h3>
-
-* Garmin Lidar compatibility
-* Incorporates Accelerometer
-* Bluetooth functionality
-* LED indicators for power & charging
-* Battery-powered
-* Tracks battery charge %
-* USB-C charging
-* Bluetooth data transmission functionality
-* Fits within constraints of existing casing design
-* Minimizes part count
+<div class="row">
+  <div class="column">
+    <ul>
+        <li>Garmin Lidar compatibility</li>
+        <li>Incorporates Accelerometer</li>
+        <li>Battery-powered</li>
+        <li>Tracks battery charge %</li>
+    </ul>
+  </div>
+  <div class="column">
+    <ul>
+        <li>USB-C charging</li>
+        <li>Bluetooth data transmission functionality</li>
+        <li>LED indicators for power & charging</li>
+        <li>Programmable through SWD interface</li>
+    </ul>
+  </div>
+</div>
 
 <p><b>Other Considerations</b></p>
-<ul>
-    <li>Mechanical Constraints</li>
-    <li>DFM / DFA</li>
-    <li>Regulatory Compliance</li>
-    <li>Cost</li>
-</ul>
+<div class="row">
+  <div class="column">
+    <ul>
+      <li>Mechanical Constraints --> fits within constraints of existing casing design</li>
+      <li>DFM / DFA --> parts available, standard stackup, exceeds spacing rules</li>
+    </ul>
+  </div>
+  <div class="column">
+    <ul>
+        <li>Cost - minimized part count, reduced complexity</li>
+        <li>Regulatory Compliance</li>
+    </ul>
+  </div>
+</div>
+<br>
+
 
 <h3>Block Diagram of PCB Architecture</h3>
 <p>The diagram below shows the functional blocks of the design.</p>
-
 <div>
     <img src="img/stolmate/stolmate-blockdiagram-pcb-architecture.png" alt="Block Diagram of PCB Architecture" style="width:100%">
 </div>

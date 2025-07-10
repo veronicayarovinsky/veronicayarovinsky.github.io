@@ -91,31 +91,44 @@
 <hr />
 
 <h3>PCB Functional Requirements</h3>
-
-<ul>
-  <li>Garmin Lidar compatibility</li>
-  <li>Incorporates Accelerometer</li>
-  <li>Bluetooth functionality</li>
-  <li>LED indicators for power &amp; charging</li>
-  <li>Battery-powered</li>
-  <li>Tracks battery charge %</li>
-  <li>USB-C charging</li>
-  <li>Bluetooth data transmission functionality</li>
-  <li>Fits within constraints of existing casing design</li>
-  <li>Minimizes part count</li>
-</ul>
+<div class="row">
+  <div class="column">
+    <ul>
+        <li>Garmin Lidar compatibility</li>
+        <li>Incorporates Accelerometer</li>
+        <li>Battery-powered</li>
+        <li>Tracks battery charge %</li>
+    </ul>
+  </div>
+  <div class="column">
+    <ul>
+        <li>USB-C charging</li>
+        <li>Bluetooth data transmission functionality</li>
+        <li>LED indicators for power &amp; charging</li>
+        <li>Programmable through SWD interface</li>
+    </ul>
+  </div>
+</div>
 
 <p><b>Other Considerations</b></p>
-<ul>
-    <li>Mechanical Constraints</li>
-    <li>DFM / DFA</li>
-    <li>Regulatory Compliance</li>
-    <li>Cost</li>
-</ul>
+<div class="row">
+  <div class="column">
+    <ul>
+      <li>Mechanical Constraints --&gt; fits within constraints of existing casing design</li>
+      <li>DFM / DFA --&gt; parts available, standard stackup, exceeds spacing rules</li>
+    </ul>
+  </div>
+  <div class="column">
+    <ul>
+        <li>Cost - minimized part count, reduced complexity</li>
+        <li>Regulatory Compliance</li>
+    </ul>
+  </div>
+</div>
+<p><br /></p>
 
 <h3>Block Diagram of PCB Architecture</h3>
 <p>The diagram below shows the functional blocks of the design.</p>
-
 <div>
     <img src="img/stolmate/stolmate-blockdiagram-pcb-architecture.png" alt="Block Diagram of PCB Architecture" style="width:100%" />
 </div>
