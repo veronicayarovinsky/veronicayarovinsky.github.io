@@ -9,7 +9,7 @@ style: ../assets/css/style.scss
     <div>
       <h1 class="intro-heading">Hi! I'm Veronica</h1>
       <p class="intro-text"><b>I'm an Electrical Engineering student at Dartmouth College, and I love designing systems, PCBs, circuits, and anything related to energy. When I am not engineering, you’ll find me climbing in the Colorado mountains or surfing on the California coast.</b></p>
-      <p>I started my professional journey with opportunities in energy systems and computer scinece. I have since discovered my passion for electronics, and I hope to pursue a career which allows me to design power electronics or hardware to turn novel ideas into functional products.</p>
+      <p>I started my professional journey with opportunities in energy systems and computer science. I have since discovered my passion for electronics, and I hope to pursue a career which allows me to design power electronics or hardware to turn novel ideas into functional products.</p>
       <p>I hope that you'll take a look at some of my work below! Please note that the content on this website is a work in progress. Feel free to reach out using the contact info on my Resume or LinkedIn (linked at the top of this page) - I am happy to provide more info about myself and my work!</p>
     </div>
     <div>
