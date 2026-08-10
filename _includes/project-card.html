@@ -1,0 +1,22 @@
+{% comment %} Featured card. Usage: {% include project-card.html project=p %}
+   Media priority: hero_video (looping clip) > hero_image > gradient placeholder. {% endcomment %}
+<div class="featured-card" style="--accent: {{ include.project.accent }}; --accent-ink: {{ include.project.accent_ink }}">
+  <span class="featured-card__ghost" aria-hidden="true">{{ include.project.number }}</span>
+  <a class="featured-card__inner" href="{{ include.project.url | relative_url }}">
+    {% if include.project.hero_video and include.project.hero_video != "" %}
+      <video class="featured-card__media" autoplay loop muted playsinline{% if include.project.hero_poster %} poster="{{ include.project.hero_poster | relative_url }}"{% endif %}>
+        <source src="{{ include.project.hero_video | relative_url }}" type="video/mp4">
+      </video>
+    {% elsif include.project.hero_image and include.project.hero_image != "" %}
+      <img class="featured-card__media" src="{{ include.project.hero_image | relative_url }}" alt="">
+    {% else %}
+      <span class="featured-card__media featured-card__media--ph">{{ include.project.title }}</span>
+    {% endif %}
+    <span class="featured-card__body">
+      <span class="featured-card__kicker">{{ include.project.kicker }}</span>
+      <span class="featured-card__title">{{ include.project.title }}</span>
+      <span class="featured-card__summary">{{ include.project.summary }}</span>
+      {% if include.project.tags %}<span class="tag-row">{% for t in include.project.tags limit:3 %}<span class="tag">{{ t }}</span>{% endfor %}</span>{% endif %}
+    </span>
+  </a>
+</div>

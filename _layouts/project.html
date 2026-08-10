@@ -1,0 +1,26 @@
+---
+layout: default
+---
+{% comment %} Featured project template. Front matter per _projects/*.md:
+   title, number, kicker, summary, role, dates, order, accent, accent_ink, hero_image, tags {% endcomment %}
+<div class="wrap" style="--accent: {{ page.accent }}; --accent-ink: {{ page.accent_ink }}">
+  <a class="breadcrumb" href="{{ '/#projects' | relative_url }}">← Projects</a>
+
+  <section class="project-hero reveal">
+    <div class="project-hero__text">
+      <!-- <span class="eyebrow">{% if page.number %}{{ page.number }} / {% endif %}{{ page.kicker }}</span> -->
+      {% if page.kicker %}<p class="project-hero__meta">{{ page.kicker }}</p>{% endif %}
+      <h1>{{ page.title }}</h1>
+      {% if page.summary %}<p class="project-hero__summary">{{ page.summary }}</p>{% endif %}
+      <p class="project-hero__meta">{{ page.role }}{% if page.dates %} · {{ page.dates }}{% endif %}</p>
+      {% if page.tags %}<span class="tag-row">{% for t in page.tags %}<span class="tag">{{ t }}</span>{% endfor %}</span>{% endif %}
+    </div>
+    {% if page.hero_image %}<div class="project-hero__media"><img src="{{ page.hero_image | relative_url }}" alt="{{ page.title }}"></div>{% endif %}
+  </section>
+
+  <article class="project-body">
+    {{ content }}
+  </article>
+
+  {% if page.featured %}{% include pager.html %}{% endif %}
+</div>

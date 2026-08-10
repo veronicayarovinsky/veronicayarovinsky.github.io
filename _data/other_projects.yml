@@ -1,0 +1,180 @@
+# each entry = one expandable block on the landing page
+# id · kicker (small label) · title · subtitle (one line)
+# images: list of paths, OR {src:, caption:} maps for a captioned gallery (first image = thumbnail); [] = placeholders
+# body: 1–2 tight paragraphs — role · one technical highlight · result (markdown)
+# tags: keywords
+# page (for select projects): full write-up URL → renders a "Read more →" link (ex: /classd/)
+
+# - id: inverter
+#   kicker: Power electronics
+#   title: 3 kW inverter
+#   subtitle: Requirements → topology → control → test (internship)
+#   images: []                       # NDA: diagrams/sims only — add a topology block diagram when made
+#   body: >
+#     A 3 kW inverter I took from requirements to validated hardware during an internship: I
+#     defined the specs, simulated the converter topology and control strategy in MATLAB/Simulink,
+#     selected components, and did schematic capture and layout in Altium. I ran board bring-up,
+#     debugged the power/control/sensing subsystems, and validated it with load-response,
+#     output-waveform, and fault-response testing. (Kept general — internship work.)
+#   tags: [Power electronics, DC-AC, Bring-up]
+
+- id: dhe
+  kicker: Dartmouth Humanitarian Engineering
+  title: Solar Water-Heating System in Uganda
+  subtitle: >
+    Designed and installed a solar thermal water heating system in rural Uganda, balancing cost, 
+    reliability, and field constraints to create a system that continues operating today.
+  images:
+    - src: /img/dhe/dhe-construction-1.jpg
+      caption: DHE Construction
+    - src: /img/dhe/dhe-system-labeled.png
+      caption: DHE System
+    - src: /img/dhe/dhe-1.png
+      caption: DHE system
+  body: >
+    I co-led the design, implementation, and testing of an off-grid solar water heating system 
+    to displace the use of firewood for cooking at a 10,000 student university in Kampala, Uganda. 
+    Received funding awards from the Thayer School of Engineering Dean’s Fund, the Irving Institute, 
+    and the NSF Innovation Corps.
+  # tags: [System Design]
+  page: /dhe/
+
+- id: classd
+  # kicker: Power electronics
+  title: Class-D Audio Amplifier
+  # subtitle: Buck-converter powertrain · ~96% efficiency
+  subtitle: >
+    I designed, simulated, built, and tested a Class-D amplifier using a buck converter topology 
+    to deliver high-efficiency audio output to a 4 Ω speaker. The design achieved over 
+    96% peak efficiency and clean tracking of a sinusoidal audio input from 100 Hz to 20 kHz.
+  images:
+    - src: /img/engs125/engs125-pcb.png
+      caption: Populated board (hand-soldered)
+    - src: /img/engs125/engs125-performance-D50-Vin12V-Rload4Ohms.png
+      caption: Bench test — D=50%, 12 V in, 4 Ω load
+  body: >
+    I designed, simulated, built, and tested a Class-D amplifier using a buck converter topology 
+    to deliver high-efficiency audio output to a 4 Ω speaker. The design achieved over 
+    96% peak efficiency and clean tracking of a sinusoidal audio input from 100 Hz to 20 kHz.
+  # body: >
+  #   A buck-converter power stage for a Class-D audio amp, driving a 20 kHz signal into a 4 Ω
+  #   load from 12 V. I optimized it in LTspice, laid out a low-inductance board in Altium,
+  #   hand-soldered it, and bench-tested it against spec — it reached ~96% efficiency and
+  #   exceeded every requirement.
+  # tags: [Power electronics, LTspice, Altium]
+  page: /classd/
+
+- id: printing
+  # kicker: CAD / mechanical
+  # title: 3D-printed design projects
+  title: Custom Car-Mounted Phone Holder
+  # subtitle: SolidWorks + design-for-print (DFM)
+  # subtitle: Personal Mechanical Design Project
+  subtitle: >
+    I designed and 3D printed a custom phone holder that mounts into a slot behind my car’s center console.
+  images:
+    - src: /img/3dprints/phoneholder_driver_view.jpg
+      caption: Phone holder final print, driver view
+    - src: /img/3dprints/phoneholder_back.jpg
+      caption: 'Phone holder print: hook holding it in place, behind the console'
+  # images: []                       # add: stick-clip iterations, phone mount, SolidWorks screenshots
+  body: >
+    <div class="dive">
+      <div class="dive__text">
+        <p>I was tired of fighting with every phone mount I tried: suction cups that slowly fell off, 
+          mounts that shifted while driving, and holders that launched my phone across the car when braking. 
+          Since I rely on my phone for navigation, I wanted a solution… so why not make it myself? 
+        </p>
+        <h4>Designing around real-world constraints</h4>
+        <div>
+        <p>My first prototype successfully fit into the slot behind the console slot, 
+        but exposed several unforseen issues:</p>
+        <ul>
+          <li>• phone fit was too loose, allowing unwanted movement on bumps</li>
+          <li>• holder partially blocked the air vents</li> 
+          <li>• single-piece design geometry required extensive print supports,
+          resulting in a rough surface finish and inefficient print process</li>
+        </ul>
+        </div>
+      </div>
+      <figure class="dive__media"><img src="/img/3dprints/v1_annotated.jpg" alt=""></figure>
+    </div>
+
+    <div class="trio">
+      <figure>
+        <h4>Iterating!</h4>
+        <p>In the second iteration, I split the holder into two separate components fastened together with screws.</p>
+      </figure>
+      <figure>
+        <img src="/img/3dprints/phoneholder_driver_view.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="/img/3dprints/phoneholder_back.jpg" alt="">
+      </figure>
+    </div>
+  # tags: [SolidWorks, DFM, 3D printing]
+
+- id: amradio
+  # kicker: RF / analog
+  title: Transistor-level heterodyne receiver
+  # title: AM radio receiver
+  subtitle: >
+    I built a transistor-level 455 kHz IF receiver with dual LNAs, switching mixer, ceramic filter, 
+    IF amplifier, envelope detector, and audio power amplifier output stage. I simulated my design in 
+    LTSpice, then validated the gain of the breadboarded circuit using a modulated 1.4 MHz input from 
+    function generator and an oscilloscope, then demonstrated functionality with an audio input and headphones.
+  images:
+    - src: /img/engs61/engs61-breadboard-annotated.png
+      caption: Breadboard, stages annotated
+    - src: /img/engs61/engs61-scope.png
+      caption: Measured demodulated output
+  body: >
+    A transistor-level heterodyne AM receiver that demodulates and amplifies a broadcast
+    signal into 32 Ω headphones. I designed it, simulated it in LTspice, and built it on a
+    breadboard, then compared measured against simulated: overall gain came out 47.5 V/V
+    measured versus 46.0 V/V simulated — close agreement for a breadboarded MF circuit.
+  # tags: [RF, Analog, LTspice]
+
+# - id: duckcar
+#   # kicker: Controls
+#   title: Duck car compensator
+#   subtitle: Lead compensator · analog implementation
+#   images:
+#     - src: /img/engs26/engs26-breadboard2.png
+#       caption: Breadboarded compensator + cart
+#     - src: /img/engs26/engs26-circuit-annotated.png
+#       caption: Analog lead-compensator circuit
+#   body: >
+#     A lead compensator to shape the transient response of a controls-course "duck car" — the
+#     goal was the shortest stopping distance with no overshoot or oscillation. I designed the
+#     compensator, built it as an analog circuit, and tuned it on the physical cart. The tuned
+#     loop gave high damping, low settling time, and no steady-state error.
+#   tags: [Controls, Analog]
+
+# - id: looma
+#   # kicker: System design
+#   title: Looma redesign
+#   subtitle: Custom motherboard PCB · sponsored project
+#   images:
+#     - src: /img/looma/wiring-diagram.png
+#       caption: System wiring / functional block diagram
+#   body: >
+#     Electrical redesign of a solar-powered classroom device (Looma). I compiled the system's
+#     power budget, then designed a custom motherboard PCB in Altium — power
+#     distribution/regulation, a Class-D audio amp, and a 4-port USB hub — around a Raspberry Pi
+#     Compute Module 4. The architecture is modular, so a fault is isolated to one board rather
+#     than the whole system.
+#   tags: [System design, PCB, Power]
+
+# - id: gearbox
+#   kicker: Signal + ML
+#   title: Gearbox RUL model
+#   subtitle: Predictive maintenance · crowdsourcing challenge
+#   images: []
+#   body: >
+#     A predictive-maintenance model estimating the remaining useful life (RUL) of an industrial
+#     gearbox from a 35 GB multi-channel vibration dataset. I engineered time-series and
+#     frequency-domain features and trained an XGBoost model to predict RUL. Built for a
+#     crowdsourcing challenge.
+#   tags: [Signal processing, ML]
+

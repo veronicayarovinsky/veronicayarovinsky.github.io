@@ -11,3 +11,9 @@ __To test code locally:__
 http://localhost:4000/
 
 
+__to update my resume w/o changing the link__
+in google drive folder containing the file:
+click on three dots --> File information --> Manage versions
+
+
+

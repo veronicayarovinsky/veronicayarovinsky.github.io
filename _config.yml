@@ -1,6 +1,29 @@
+title: Veronica Yarovinsky
+description: Electrical engineer — systems integration, mechatronics, hardware bring-up
+url: "https://veronicayarovinsky.github.io"
+
+# self-contained custom design (no theme)
+plugins:
+  - jekyll-seo-tag
+
+# featured projects become pages at /<name>/
+# build-log entries are NOT pages (output:false), they render inline as expandable blocks on the landing page.
+collections:
+  projects:
+    output: true
+    permalink: /:name/
+  buildlog:
+    output: false
+
+defaults:
+  - scope: { path: "" }
+    values: { layout: default }
+  - scope: { path: "", type: projects }
+    values: { layout: project }
+
 # remote_theme: pages-themes/cayman@v0.2.0
 # plugins:
 # - jekyll-remote-theme
-title: Veronica's Projects
+# title: Veronica's Projects
 # description: welcome!
-theme: jekyll-theme-cayman
+# theme: jekyll-theme-cayman

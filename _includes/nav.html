@@ -1,0 +1,10 @@
+{% comment %} Sticky nav. Projects = in-page anchor; Resume + LinkedIn are buttons. {% endcomment %}
+{% assign resume_url = "https://drive.google.com/file/d/REPLACE_WITH_CURRENT_RESUME_ID/view" %}
+<header class="site-nav" id="site-nav">
+  <a class="site-nav__brand" href="{{ '/' | relative_url }}">Veronica Yarovinsky</a>
+  <nav class="site-nav__links" aria-label="Primary">
+    <a href="{{ '/#projects' | relative_url }}">Projects</a>
+    <a class="site-nav__btn site-nav__btn--alt" href="https://drive.google.com/file/d/1bnBc-WQEO_hUwSzd--hY-H-PzH9O_3xA/view?usp=drive_link" target="_blank" rel="noopener">Resume ↗</a>
+    <a class="site-nav__btn site-nav__btn--alt" href="https://www.linkedin.com/in/veronica-yarovinsky/" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </nav>
+</header>

@@ -1,0 +1,18 @@
+{% comment %} One "other project": card button + its <dialog> popup.
+   Usage: {% include modal.html item=item %}
+   site.js handles open (click) / close (X, backdrop, Esc). {% endcomment %}
+<button class="mini-card" data-modal="modal-{{ include.item.id }}">
+  <span class="mini-card__k mini-card__k--{{ include.item.accent }}">{{ include.item.kicker }}</span>
+  <span class="mini-card__v">{{ include.item.title }}</span>
+</button>
+
+<dialog class="modal" id="modal-{{ include.item.id }}" aria-label="{{ include.item.title }}">
+  <div class="modal__inner">
+    <button class="modal__close" data-close aria-label="Close">&times;</button>
+    {% if include.item.images %}<div class="modal__media">{% for img in include.item.images %}<img src="{{ img | relative_url }}" alt="">{% endfor %}</div>{% endif %}
+    <h2 class="modal__title">{{ include.item.title }}</h2>
+    {% if include.item.subtitle %}<p class="modal__subtitle">{{ include.item.subtitle }}</p>{% endif %}
+    <div class="modal__body">{{ include.item.body | markdownify }}</div>
+    {% if include.item.tags %}<div class="tag-row">{% for t in include.item.tags %}<span class="tag">{{ t }}</span>{% endfor %}</div>{% endif %}
+  </div>
+</dialog>

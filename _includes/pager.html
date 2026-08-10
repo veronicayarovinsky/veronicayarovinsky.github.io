@@ -1,0 +1,16 @@
+{% comment %} Links to the NEXT featured (by 'order'), looping. Keeps recruiters moving. {% endcomment %}
+{% assign sorted = site.projects | where: "featured", true | sort: "order" %}
+{% assign count = sorted.size %}
+{% for p in sorted %}{% if p.url == page.url %}{% assign curidx = forloop.index0 %}{% endif %}{% endfor %}
+{% assign nextidx = curidx | plus: 1 | modulo: count %}
+<nav class="pager" aria-label="Project navigation">
+  {% for p in sorted %}{% if forloop.index0 == nextidx %}
+    <a class="pager__next" href="{{ p.url | relative_url }}">
+      {% if p.hero_image %}<img class="pager__thumb" src="{{ p.hero_image | relative_url }}" alt="">{% endif %}
+      <span class="pager__col">
+        <span class="pager__label">Next project</span>
+        <span class="pager__title">{{ p.title }} →</span>
+      </span>
+    </a>
+  {% endif %}{% endfor %}
+</nav>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <script>document.documentElement.className += ' js';</script>
+    <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Autonomous Maze-solving Robot | Veronica Yarovinsky</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Autonomous Maze-solving Robot" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Electrical engineer — systems integration, mechatronics, hardware bring-up" />
+<meta name="twitter:description" property="og:description" content="Electrical engineer — systems integration, mechatronics, hardware bring-up" />
+<link rel="canonical" href="http://localhost:4000/micromouse/" />
+<meta property="og:url" content="http://localhost:4000/micromouse/" />
+<meta property="og:site_name" content="Veronica Yarovinsky" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-10T17:11:49-04:00" />
+<meta property="article:modified_time" content="2026-08-10T17:11:49-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Autonomous Maze-solving Robot" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-10T17:11:49-04:00","datePublished":"2026-08-10T17:11:49-04:00","description":"Electrical engineer — systems integration, mechatronics, hardware bring-up","headline":"Autonomous Maze-solving Robot","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/micromouse/"},"url":"http://localhost:4000/micromouse/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#00A6DC">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1786396309">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- You can set your favicon here -->
+<link rel="icon" href="/img/initials-light.png" type="image/png" sizes="32x32">
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+    
+
+<header class="site-nav" id="site-nav">
+  <a class="site-nav__brand" href="/">Veronica Yarovinsky</a>
+  <nav class="site-nav__links" aria-label="Primary">
+    <a href="/#projects">Projects</a>
+    <a class="site-nav__btn site-nav__btn--alt" href="https://drive.google.com/file/d/1bnBc-WQEO_hUwSzd--hY-H-PzH9O_3xA/view?usp=drive_link" target="_blank" rel="noopener">Resume ↗</a>
+    <a class="site-nav__btn site-nav__btn--alt" href="https://www.linkedin.com/in/veronica-yarovinsky/" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </nav>
+</header>
+    <main id="content" class="main-content">
+      
+<div class="wrap" style="--accent: #67e8f9; --accent-ink: #007393">
+  <a class="breadcrumb" href="/#projects">← Projects</a>
+
+  <section class="project-hero reveal">
+    <div class="project-hero__text">
+      <!-- <span class="eyebrow">Micromouse</span> -->
+      <p class="project-hero__meta">Micromouse</p>
+      <h1>Autonomous Maze-solving Robot</h1>
+      <p class="project-hero__summary">Characterized motor dynamics and sensor behavior, implemented low-level motion control, and integrated embedded firmware for real-time sensing, navigation, and autonomous decision-making.
+</p>
+      <p class="project-hero__meta"></p>
+      <span class="tag-row"></span>
+    </div>
+    <div class="project-hero__media"><img src="/img/micromouse/mazedrive_closeup.gif" alt="Autonomous Maze-solving Robot"></div>
+  </section>
+
+  <article class="project-body">
+    <!-- Our goal was simple: build a robot to autonomously drive through a maze, map the walls, and solve the maze. -->
+
+<p>My work centered on the pieces that connected everything together: choosing and characterizing sensors, designing and implementing closed-loop controllers, building the embedded software framework, and turning a collection of independently developed subsystems into a robot that could reliably drive itself through the maze.</p>
+
+<div class="gallery">
+  <figure class="dive__media"><img src="/img/micromouse/robot_frontview.jpg" alt="" /></figure>
+  <figure class="dive__media"><img src="/img/micromouse/robot_backview.jpg" alt="" /></figure>
+  <figure class="dive__media"><img src="/img/micromouse/robot_sideview.jpg" alt="" /></figure>
+</div>
+
+<div class="dive">
+  <div class="dive__text">
+    <h3>System Architecture</h3>
+    <p>
+      One of the project's biggest challenges was that each subsystem—wall sensing, motion control, localization, and navigation—was developed separately before being combined into a single autonomous robot. Rather than allowing each controller to operate independently, I reorganized the motion-control software so that the finite state machine could issue standardized "drive forward" and "turn" commands while lower-level controllers handled heading regulation, motor speed, and encoder feedback. This separation made it possible to test individual subsystems while keeping the navigation logic independent of the underlying control implementation.
+    </p>
+    <p></p>
+  </div>
+  <figure class="dive__media"><img src="/img/micromouse/robot_sideview.jpg" alt="" /></figure>
+</div>
+
+<!-- ===================================================================== -->
+<!-- System & Software Architecture -->
+
+<div class="dive">
+  <div class="dive__text">
+    <h3>From Six Separate Projects to One Robot (system &amp; software architecture)</h3>
+    <p>
+      One of the project's biggest challenges was that each subsystem—wall sensing, motion control, localization, and navigation—was developed separately before being combined into a single autonomous robot. Rather than allowing each controller to operate independently, I reorganized the motion-control software so that the finite state machine could issue standardized "drive forward" and "turn" commands while lower-level controllers handled heading regulation, motor speed, and encoder feedback. This separation made it possible to test individual subsystems while keeping the navigation logic independent of the underlying control implementation.
+    </p>
+    <p></p>
+  </div>
+  <figure class="dive__media"><img src="/img/micromouse/robot_frontview.jpg" alt="" /></figure>
+  <figure class="dive__media"><img src="/img/micromouse/robot_backview.jpg" alt="" /></figure>
+  <figure class="dive__media"><img src="/img/micromouse/robot_sideview.jpg" alt="" /></figure>
+</div>
+
+<!-- ===================================================================== -->
+<!-- CONTROLS -->
+
+<div class="dive dive--reverse">
+  <figure class="dive__media"><img src="/img/PLACEHOLDER.png" alt="" /></figure>
+  <div class="dive__text">
+    <h3>Making 90° Turns Actually 90°</h3>
+    <p>
+    </p>
+  </div>
+</div>
+
+<div class="gallery">
+  <figure class="dive__media"><img src="/img/micromouse/robot_frontview.jpg" alt="" /></figure>
+  <figure class="dive__media"><img src="/img/micromouse/robot_backview.jpg" alt="" /></figure>
+  <figure class="dive__media"><img src="/img/micromouse/robot_sideview.jpg" alt="" /></figure>
+</div>
+
+<!-- ===================================================================== -->
+<!-- INTEGRATION -->
+
+<div class="dive">
+  <figure class="dive__media"><img src="/img/PLACEHOLDER.png" alt="" /></figure>
+  <div class="dive__text">
+    <h3>When Everything Broke at Once (integration)</h3>
+    <p>
+    </p>
+  </div>
+</div>
+
+<!-- <aside class="story">
+  <h3>Debugging story</h3>
+  <p></p>
+</aside> -->
+
+<!-- ===================================================================== -->
+<!-- RESULT -->
+
+<figure>
+  <img src="/img/micromouse/mazedrive_topview.gif" alt="" />
+  <figcaption>
+    Our micromouse robot navigating navigating a competition-style maze.
+  </figcaption>
+</figure>
+
+
+  </article>
+
+  
+
+
+
+
+<nav class="pager" aria-label="Project navigation">
+  
+    <a class="pager__next" href="/stolmate/">
+      <img class="pager__thumb" src="/img/stolmate/stolmate_pcb_final_front.jpg" alt="">
+      <span class="pager__col">
+        <span class="pager__label">Next project</span>
+        <span class="pager__title">Aircraft Telemetry & Sensing Module →</span>
+      </span>
+    </a>
+  
+</nav>
+</div>
+      <footer class="site-footer">
+        <a href="mailto:veronica.t.yarovinsky.24@dartmouth.edu">Email</a>
+        <!-- <a href="/#buildlog">Build log</a> -->
+        <a href="https://www.linkedin.com/in/veronica-yarovinsky/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <span class="site-footer__credits">© Built by Veronica Yarovinsky</span>
+      </footer>
+    </main>
+    <script src="/assets/js/site.js"></script>
+  </body>
+</html>

@@ -1,58 +1,206 @@
-// Breakpoints
-$large-breakpoint: 64em !default;
-$medium-breakpoint: 42em !default;
+//  variables.scss
 
-// Headers
-$header-heading-color: #fff !default;
-$header-bg-color: #159957 !default;
-$header-bg-color-secondary: #155799 !default;
+// breakpoints (SCSS vars — only usable inside @media)
+// $bp-md: 820px;   // multi-column layouts stack below this
+$bp-md: 1200px;   // multi-column layouts stack below this
+$bp-sm: 640px;   // padding tightens below this
 
-$intro-header-text-size: 56px;
+/* ***************************************************** */
 
-// $accent-color: #15B2B2 !default;
-// $accent-color: #3ddbed;
-$accent-color: #56eeff;
-$deep-color: #1e6bb8 !default;
-// $purple-color: #9CB9FF !default;
-// $purple-color: #3D25B8;
-$purple-color: #00717E;
-// $greyish-color: #567482 !default;
-$greyish-color: #A1B8F9;
-// $card-title-color: #dce6f0 !default;
-// $card-title-color: #3D25B8;
-$card-title-color: #00717E;
+:root {
+    /* --------------------------------------------------- */
+    // base colors
+    --paper:  #FFFFFF;              // page background
+    --surface:#FFFFFF;             // cards / popups
+    // --ink:    #15212B;             // primary text
+    --ink: var(--cyan950);
+    --slate:  #54616B;             // secondary text
+    --med-slate: #768591;
+    --soft-slate: #b1cbde;
+    --dusty-blue: #88a1b5;
 
-// Background
-// $background-color: #161616 !default;
-// $background-color: #EBF8FA;
-// $background-color: #F5F7FF;
-$background-color: #EBF8FA;
-// $card-color: #0D0D0D !default;
-// $card-color: #F5F7FF;
-$card-color: #EBF8FA;
+    /* --------------------------------------------------- */
+    // accent colors (xxx-bright for areas/outlines; otherwise text)
+    // --blue-bright:#00A6DC;   --blue:#0A6C95;
+    // --teal-bright: #00C5CD;   --teal: #008688;    --teal-dark: #004f50;
+    // --teal-bright-translucent: #00C5CD33;
+    // --teal-light: #3becf2;
+    // --teal-verylight: #5af9ff;
+    // --b-light: #00d3db;
+    // --b: #009da2;
+    --teal-bright: var(--cyan500);   --teal: var(--cyan700);    --teal-dark: var(--cyan950);
+    --teal-light: var(--cyan400);
+    --teal-verylight: var(--cyan300);
 
-// Text
-// $section-headings-color: #819198 !default;
-$section-headings-color: #A1B8F9;
-// $body-text-color: #819198 !default;
-// $body-text-color: #140C3D;
-$body-text-color: #003439;
-// $body-text-color: #dce6f0 !default;
-// $body-link-color: #9CB9FF !default;
-$body-link-color: #00717E;
-// $body-link-color: #1e6bb8 !default;
-$blockquote-text-color: #819198 !default;
-// $body-text-color: #606c71 !default;
-// $body-link-color: #1e6bb8 !default;
-// $blockquote-text-color: #819198 !default;
-$body-font-size: 16px;
+    --teal-light-translucent: var(--cyan400-translucent);
+    --teal-verylight-translucent: var(--cyan300-translucent);
+    --teal-bright-translucent: var(--cyan500-translucent);
+    // --teal-translucent: var(--cyan700-translucent);
+    // --teal-more-translucent: var(--cyan700-more-translucent);
+    --green-bright:#12C2A0;   --green:#0A7D66;
+    --olive-bright:#89990E;  --olive-med:#6b7904; --olive:#5E6A09; --olive2:#545f00;
+    --olive-med2:#67730b;
+    --olive-med3:#6e7539;
+    --lime:#EEFF6E;                // hero highlight only
+    --lime2: rgb(141, 148, 84);
 
-// Code
-$code-bg-color: #f3f6fa !default;
-$code-text-color: #567482 !default;
+    --gold1: #d9f88f;
+    --gold2: #b2d268;
+    --gold2-faded: #b9c69b;
+    --gold2-dim: #c4cbb3;
+    --gold3: #8fa952;
+    --gold3-dim: #94a76b;
+    // --gold3-dim: #9bac75;
+    --gold3-faded: #96a07e;
+    --gold4: #6d823e;
+    --gold4-faded: #707a5a;
+    --gold5: #4e5d2a;
+    --gold6: #303a18;
+    --gold7: #151b08;
 
-// Borders
-$border-color: #dce6f0 !default;
-$table-border-color: #e9ebec !default;
-$hr-border-color: #606c713e !default;
-// $hr-border-color: #eff0f1 !default;
+    /* --------------------------------------------------- */
+    // other colors
+    --sky: rgb(106, 207, 255);
+    --sky300: #7dd3fc;
+    --sky400: #38bdf8;
+    --sky500: #0ea5e9;
+    --sky600: #0284c7;
+    --sky700: #0369a1;
+    --sky800: #075985;
+    --sky950: #082f49;
+
+    --cyan300: #67e8f9;
+    --cyan300-translucent: #67e8f933;
+    --cyan400: #22d3ee;
+    --cyan400-translucent: #22d3ee88;
+    --cyan500: #00afce;
+    --cyan500-translucent: #00afce88;
+    --cyan600: #0891b2;
+    --cyan700: #007393;
+    --cyan700-translucent: #00739366;
+    --cyan700-more-translucent: #00739333;
+    --cyan800: #155e75;
+    --cyan900: #164e63;
+    --cyan950: #083344;
+
+    // --cyan300: #67e8f9;
+    // --cyan400: #22d3ee;
+    // --cyan500: #06b6d4;
+    // --cyan600: #0891b2;
+    // --cyan700: #0e7490;
+    // --cyan800: #155e75;
+    // --cyan900: #164e63;
+    // --cyan950: #083344;
+
+    
+    --aqua: rgb(0, 140, 255);
+    --aqua2: rgb(0, 94, 171);
+    // --ocean: rgb(0, 74, 136);
+    --ocean: rgb(0, 74, 136);
+    --salmon: rgb(255, 114, 110);
+    // --orchid: rgb(110, 118, 255);
+    --orchid: rgb(110, 118, 255);
+    --orchid-dark: rgb(47, 54, 201);
+    --lavender: rgb(210, 120, 255);
+    --spindrift: rgb(104, 251, 208);
+    --sea-foam: rgb(3, 249, 135);
+    --moss: rgb(1, 132, 72);
+    --ice: rgb(104, 253, 255);
+    --turquoise: rgb(0, 195, 195);
+    --turquoise3: #00C5CD;
+    --turquoise4: rgb(0, 134, 136);
+    --honeydew: rgb(206, 250, 110);
+    --honeydew2: rgb(130, 148, 92);
+
+    
+    /* ===================================================== */    
+    // FONTS
+    //   --display:"Barlow", system-ui, sans-serif;   // headings
+    //   --body:"Barlow", system-ui, sans-serif;      // body text
+    --display:"Manrope", system-ui, sans-serif;   // headings
+    --body:"Manrope", system-ui, sans-serif;      // body text
+    --mono:"IBM Plex Mono", ui-monospace, monospace;    // labels & captions
+
+    /* --------------------------------------------------- */
+    // TEXT SIZES
+    --fs-name:       2.4rem;   // hero name (mobile)
+    --fs-name-lg:    3.2rem;   // hero name (desktop, >= md)
+    --fs-tagline:    1.3rem;
+    --fs-lead:       1.0rem;
+    --fs-section:    1.5rem;   // section titles
+    --fs-body: 0.9rem;
+    --fs-nav-btn: 0.9rem;
+    --fs-nav-name: 0.9rem;
+    --fs-footer: 0.82rem;
+
+    /* ===================================================== */    
+    // SHAPES & SPACING
+    --radius:    16px;    // big cards / popups
+    --radius-sm: 12px;    // small cards / build-log blocks
+    --radius-xs: 10px;    // images
+    --maxw:      1100px;  // content width
+    --gap:       1.4rem;  // main grid gap
+
+
+    /* ===================================================== */
+    /* --------------------------------------------------- */
+    // NAVBAR COLORS
+    // --color-nav-name: var(--teal-verylight);
+    --color-nav-name: var(--gold3);
+    --color-nav-btn: var(--teal);
+    --color-nav-btn-hover: var(--teal-bright);
+    --color-nav-btn-hover-alt: var(--teal-verylight-translucent);
+
+    /* --------------------------------------------------- */
+    // FOOTER COLORS
+    // --color-footer-text: var(--dusty-blue);
+    --color-footer-text: var(--teal-translucent);
+    --line-footer: var(--teal-translucent);
+    // --line:   rgba(21,33,43,.12);  // hairline borders
+
+    /* --------------------------------------------------- */
+    // HOME / LANDING PAGE
+    --fs-section-title: 1.6rem;
+    --fw-section-title: 700;
+    --ls-section-title: 0.06em;     // letter spacing
+    // --c1-section-title: var(--teal);
+    --c1-section-title: var(--cyan500);
+    --c2-section-title: var(--cyan700);
+    --c3-section-title: var(--cyan500);
+
+    /* --------------------------------------------------- */
+    // CARD BLOCKS
+    --line: var(--cyan700-more-translucent);
+    --color-card-kicker: var(--cyan500);
+    --color-card-title: var(--cyan700);
+    --color-card-text: var(--cyan950);
+    --fs-card-title: 1.36rem;
+
+    /* --------------------------------------------------- */
+    // EXPANDABLE ENTRY BLOCKS
+    --line-color-entry: var(--cyan700-more-translucent);
+    --line-color-entry-hover: var(--teal-bright);
+    --color-entry-kicker: var(--cyan700);
+    --color-entry-title: var(--cyan700);
+    --color-entry-title-open: var(--cyan700);
+    // --color-entry-chevron: var(--gold2-faded);
+    // --color-entry-chevron-open: var(--cyan700-translucent);
+    --color-entry-chevron: var(--cyan700);
+    --color-entry-chevron-hover: var(--cyan300);
+    --color-entry-chevron-open: var(--cyan500);
+    --color-entry-text: var(--cyan950);
+    --color-entry-more: var(--gold3-dim);
+    --color-entry-more-hover: var(--gold2-faded);
+    --fs-entry-more: 0.72rem;
+
+    /* --------------------------------------------------- */
+    // PROJECT PAGE
+    --line-color-pager: var(--gold2);
+    --line-width-pager: 0.6px;
+    --pager-label: var(--gold3);
+    --pager-title: var(--gold4);
+    --color-pager-hover: rgba(21,33,43,.04);
+    --color-breadcrumb: var(--gold3-dim);
+    --color-breadcrumb-hover: var(--gold2-faded);
+    --fs-breadcrumb: 0.72rem;
+}

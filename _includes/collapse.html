@@ -1,0 +1,26 @@
+{% comment %} Expandable entry (Other-technical + Build-log).
+   Params: id, eyebrow?, title, subtitle?, images(array of paths OR {src,caption} maps),
+           tags?, body(rendered HTML), page?(URL -> "Read more" link)
+   First image = thumbnail. Native <details>, no JS. {% endcomment %}
+<details class="entry" id="{{ include.id }}">
+  <summary class="entry__summary">
+    {% assign imgs = include.images %}
+    {% if imgs and imgs.size > 0 %}
+      {% assign first = imgs[0] %}
+      <img class="entry__thumb" src="{% if first.src %}{{ first.src | relative_url }}{% else %}{{ first | relative_url }}{% endif %}" alt="">
+    {% else %}
+      <span class="entry__thumb entry__thumb--ph" aria-hidden="true">IMG</span>
+    {% endif %}
+    <span class="entry__meta">
+      {% if include.eyebrow %}<span class="entry__kicker">{{ include.eyebrow }}</span>{% endif %}
+      <span class="entry__title">{{ include.title }}</span>
+      {% if include.subtitle %}<span class="entry__sub">{{ include.subtitle }}</span>{% endif %}
+    </span>
+    <span class="entry__chevron" aria-hidden="true"></span>
+  </summary>
+  <div class="entry__body">
+    {% if include.tags %}<div class="tag-row">{% for t in include.tags %}<span class="tag">{{ t }}</span>{% endfor %}</div>{% endif %}
+    {{ include.body }}
+    {% if include.page %}<a class="entry__more" href="{{ include.page | relative_url }}">Read more →</a>{% endif %}
+  </div>
+</details>
