@@ -470,7 +470,7 @@ ul {
 
 .ph--ph {
   background: #EEF3F5;
-  border: 0.4px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -481,28 +481,29 @@ ul {
 }
 
 .ph--main {
-  width: 216px;
-  height: 264px;
-  top: 20px;
+  width: 182px;
+  height: 208px;
+  top: 0px;
   right: 0px;
   transform: rotate(3deg);
   z-index: 3;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .ph--build {
-  width: 180px;
-  height: 180px;
-  top: 0;
-  left: -56px;
+  width: 160px;
+  height: 160px;
+  top: 28px;
+  left: 5px;
   transform: rotate(-5deg);
   z-index: 2;
 }
 
 .ph--macro {
-  width: 280px;
-  height: 165px;
+  width: 260px;
+  height: 155px;
   bottom: -20px;
-  left: -148px;
+  left: -5px;
   transform: rotate(3deg);
   z-index: 4;
 }
@@ -1044,7 +1045,7 @@ ul {
 }
 
 .fig-wide figcaption {
-  font-family: var(--mono);
+  font-family: var(--display);
   font-size: 0.72rem;
   color: var(--slate);
   margin-top: 0.4rem;
@@ -1072,14 +1073,15 @@ ul {
 }
 
 .duo img, .trio img {
-  height: 240px;
+  width: 100%;
+  max-height: 380px;
   object-fit: cover; /* set height keeps the row aligned; use height:auto for natural aspect */
   border-radius: var(--radius-xs);
   display: block;
 }
 
 .duo figcaption, .trio figcaption {
-  font-family: var(--mono);
+  font-family: var(--display);
   font-size: 0.7rem;
   color: var(--slate);
   margin-top: 0.35rem;
@@ -1165,9 +1167,9 @@ ul {
 }
 
 .fig-aside figcaption {
-  font-family: var(--mono);
-  font-size: 0.74rem;
-  color: var(--slate);
+  font-family: var(--display);
+  font-size: 0.94rem;
+  color: var(--ink);
   line-height: 1.4;
   padding-top: 0.3rem;
 }
