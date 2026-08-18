@@ -31,30 +31,56 @@ hero_image: /img/micromouse/mazedrive_closeup.gif
 
 <!-- My work centered on the pieces that connected everything together: choosing and characterizing sensors, designing and implementing closed-loop controllers, building the embedded software framework, and turning a collection of independently developed subsystems into a robot that could reliably drive itself through the maze. -->
 
-During my 10-week mechatronics course at Dartmouth, my group of 4 built an autonomous differential-drive robot which successfully navigated and solved a 16x16 maze, inspired by the micromouse competition series.
 
-My most significant contributions included the following:
-* • motor selection & characterization
-* • low-level motion control: turn controller & speed controller
-* • sensor (IMU & TOF) bring-up, configuration & calibration, testing, troubleshooting
-* • electrical & wiring
-* • firmware architecture, integration, and testing scripts
-* • majority of troubleshooting & debugging
+<div class="duo">
+  <figure><img src="/img/micromouse/mazedrive_topview.gif" alt="">
+  <figcaption>Our micromouse robot navigating navigating a competition-style maze.</figcaption></figure>
+  <figure>
+    <br>
+    <br>
+    <p>During my 10-week mechatronics course at Dartmouth, my group of 4 built an autonomous differential-drive robot which successfully navigated and solved a 16x16 maze, inspired by the micromouse competition series.
+    </p>
+    <br>
+    <p>My most significant contributions included the following:</p>
+    <ul>
+      <li>• motor selection & characterization</li>
+      <li>• low-level motion control: turn controller & speed controller</li>
+      <li>• sensor (IMU & TOF) bring-up, configuration & calibration, testing</li>
+      <li>• electrical & wiring</li>
+      <li>• firmware architecture, integration, and testing scripts</li>
+      <li>• majority of troubleshooting & debugging</li>
+    </ul>
+  </figure>
+</div>
 
-### So, how does the robot "work"?
+<br>
 
-<figure>
+## So, how does the robot "work"?
+
+<!-- <figure>
   <img src="/img/micromouse/micromouse_system_diagram.png" alt="">
   <figcaption>Information flow</figcaption>
-</figure>
+</figure> -->
 
-1. ToF sensors → wall distances. Perpendicular three answer "is there a wall in this cell?"; diagonals look into the next cell.
-2. IMU → absolute-ish heading (fused yaw) and yaw rate. Used for turns and heading hold.
-3. Encoders → wheel angular velocity (inner loop feedback) and integrated distance (outer loop feedback).
-4. Flood fill consumes the wall map and the current pose, returns a desired compass direction.
-5. FSM converts that direction into a relative turn plus one forward cell move.
-6. Controllers execute those primitives.
-7. One write point pushes PWM to the shield.
+
+<div class="duo">
+  <figure>
+  <br>
+    <ol class="numbered" >
+      <li>ToF sensors → wall distances. Perpendicular three answer "is there a wall in this cell?"; diagonals look into the next cell </li>
+      <li>IMU → absolute-ish heading (fused yaw) and yaw rate. Used for turns and heading hold.</li>
+      <li>Encoders → wheel angular velocity (inner loop feedback) and integrated distance (outer loop feedback).</li>
+      <li>Flood fill consumes the wall map and the current pose, returns a desired compass direction.</li>
+      <li>FSM converts that direction into a relative turn plus one forward cell move.</li>
+      <li>Controllers execute those primitives.</li>
+      <li>One write point pushes PWM to the shield.</li>
+    </ol>
+  </figure>
+  <figure><img src="/img/micromouse/micromouse_system_diagram.png" alt="">
+  <figcaption>Information flow</figcaption></figure>
+</div>
+
+<br>
 
 <figure>
   <img src="/img/micromouse/micromouse_hardware_annotated.png" alt="">
@@ -62,17 +88,26 @@ My most significant contributions included the following:
 </figure>
 
 
-<!-- ### Navigating the maze... (without crashing into the walls)
-The robot stops at the center of each cell, checks for walls, and decides if it should drive forward, turn 90° left, turn 90° right, or turn 180°.
+<aside class="note">
+  <span class="note__label">Integration</span>
+  <p>
+  One of the project's biggest challenges was that each subsystem—wall sensing, motion control, localization, and navigation—was developed separately before being combined into a single autonomous robot. Rather than allowing each controller to operate independently, I reorganized the motion-control software so that the finite state machine could issue standardized "drive forward" and "turn" commands while lower-level controllers handled heading regulation, motor speed, and encoder feedback. This separation made it possible to test individual subsystems while keeping the navigation logic independent of the underlying control implementation.
+  </p>
+</aside>
+
+
+## Navigating the maze... (without crashing into the walls)
+
+<div class="trio">
+  <figure><img src="/img/micromouse/drive_fwd1cell.gif" alt=""><figcaption>forward 1 cell</figcaption></figure>
+  <figure><img src="/img/micromouse/turn90_02.gif" alt=""><figcaption>90° turn</figcaption></figure>
+  <figure><img src="/img/micromouse/turn180.gif" alt=""><figcaption>180° turn</figcaption></figure>
+</div>
+
+
+<!-- The robot stops at the center of each cell, checks for walls, and decides if it should drive forward, turn 90° left, turn 90° right, or turn 180°.
 
 Basically, this means that the robot must be able to drive forward and turn. -->
-
-
-
-
-### Integration
-One of the project's biggest challenges was that each subsystem—wall sensing, motion control, localization, and navigation—was developed separately before being combined into a single autonomous robot. Rather than allowing each controller to operate independently, I reorganized the motion-control software so that the finite state machine could issue standardized "drive forward" and "turn" commands while lower-level controllers handled heading regulation, motor speed, and encoder feedback. This separation made it possible to test individual subsystems while keeping the navigation logic independent of the underlying control implementation.
-
 
 
 
@@ -107,13 +142,5 @@ One of the project's biggest challenges was that each subsystem—wall sensing, 
   <p></p>
 </aside> -->
 
-<!-- ===================================================================== -->
-<!-- RESULT -->
 
-<figure>
-  <img src="/img/micromouse/mazedrive_topview.gif" alt="">
-  <figcaption>
-    Our micromouse robot navigating navigating a competition-style maze.
-  </figcaption>
-</figure>
 

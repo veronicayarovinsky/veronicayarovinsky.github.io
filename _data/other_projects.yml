@@ -124,15 +124,56 @@
     LTSpice, then validated the gain of the breadboarded circuit using a modulated 1.4 MHz input from 
     function generator and an oscilloscope, then demonstrated functionality with an audio input and headphones.
   images:
-    - src: /img/engs61/engs61-breadboard-annotated.png
-      caption: Breadboard, stages annotated
+    - src: /img/engs61/engs61-breadboard.jpg
     - src: /img/engs61/engs61-scope.png
       caption: Measured demodulated output
+    - src: /img/engs61/engs61-breadboard-annotated.png
+      caption: Breadboard, stages annotated
+    - src: /img/engs61/engs61-schematic-handdrawn.png
+      caption: Schematic of Final Circuit
+  # body: >
+  #   A transistor-level heterodyne AM receiver that demodulates and amplifies a broadcast
+  #   signal into 32 Ω headphones. I designed it, simulated it in LTspice, and built it on a
+  #   breadboard, then compared measured against simulated: overall gain came out 47.5 V/V
+  #   measured versus 46.0 V/V simulated — close agreement for a breadboarded MF circuit.
   body: >
-    A transistor-level heterodyne AM receiver that demodulates and amplifies a broadcast
-    signal into 32 Ω headphones. I designed it, simulated it in LTspice, and built it on a
-    breadboard, then compared measured against simulated: overall gain came out 47.5 V/V
-    measured versus 46.0 V/V simulated — close agreement for a breadboarded MF circuit.
+    I designed, simulated, and built a transistor-level radio receiver circuit to demodulate and 
+    amplify an AM radio wave into a pair of headphones. I completed this project in 2 weeks as part of 
+    the course ENGS 61: Intermediate Electrical Circuits. The measured results differed from the 
+    expected results – as expected, since I was testing a medium frequency circuit using a breadboarded implementation.
+    
+    <h3>Schematic of Final Circuit</h3>
+    <div>
+        <img src="img/engs61/engs61-schematic-handdrawn.png" style="width:70%">
+    </div>
+    <br>
+
+    <h3>Annotated photo of breadboard</h3>
+    <div>
+        <img src="img/engs61/engs61-breadboard-annotated.png" style="width:70%">
+    </div>
+    <br>
+
+    <h3>Measured output of breadboarded circuit</h3>
+    <div>
+        <img src="img/engs61/engs61-scope.png" style="width:70%">
+    </div>
+    <p>gain of breadboarded circuit = 285 mV / 6 mV = 47.5 V/V</p>
+    <br>
+
+    <h3>Comparison of LTSpice sim to measurement</h3>
+    <p>reciever input: 1.4 MHz carrier with 1 kHz audio tone at modulation depth = 40%</p>
+    <div>
+        <img src="img/engs61/engs61-ltspice.png" style="width:70%">
+    </div>
+    <br>
+
+    <h3>Overall voltage gain of the circuit</h3>
+    <ul>
+      <li>LTSpice Simulation: 46.03 V/V</li>
+      <li>Breadboarded Circuit, Measured: 47.5 V/V</li>
+    </ul>
+
   # tags: [RF, Analog, LTspice]
 
 # - id: duckcar

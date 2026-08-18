@@ -14,12 +14,12 @@
 <meta property="og:url" content="http://localhost:4000/micromouse/" />
 <meta property="og:site_name" content="Veronica Yarovinsky" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-08-18T14:26:07-04:00" />
-<meta property="article:modified_time" content="2026-08-18T14:26:07-04:00" />
+<meta property="article:published_time" content="2026-08-18T15:40:24-04:00" />
+<meta property="article:modified_time" content="2026-08-18T15:40:24-04:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Autonomous Maze-solving Robot" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-18T14:26:07-04:00","datePublished":"2026-08-18T14:26:07-04:00","description":"Electrical engineer — systems integration, mechatronics, hardware bring-up","headline":"Autonomous Maze-solving Robot","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/micromouse/"},"url":"http://localhost:4000/micromouse/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-18T15:40:24-04:00","datePublished":"2026-08-18T15:40:24-04:00","description":"Electrical engineer — systems integration, mechatronics, hardware bring-up","headline":"Autonomous Maze-solving Robot","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/micromouse/"},"url":"http://localhost:4000/micromouse/"}</script>
 <!-- End Jekyll SEO tag -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +27,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/style.css?v=1787077567">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1787082024">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- You can set your favicon here -->
@@ -71,47 +71,78 @@
 
 <!-- My work centered on the pieces that connected everything together: choosing and characterizing sensors, designing and implementing closed-loop controllers, building the embedded software framework, and turning a collection of independently developed subsystems into a robot that could reliably drive itself through the maze. -->
 
-<p>During my 10-week mechatronics course at Dartmouth, my group of 4 built an autonomous differential-drive robot which successfully navigated and solved a 16x16 maze, inspired by the micromouse competition series.</p>
+<div class="duo">
+  <figure><img src="/img/micromouse/mazedrive_topview.gif" alt="" />
+  <figcaption>Our micromouse robot navigating navigating a competition-style maze.</figcaption></figure>
+  <figure>
+    <br />
+    <br />
+    <p>During my 10-week mechatronics course at Dartmouth, my group of 4 built an autonomous differential-drive robot which successfully navigated and solved a 16x16 maze, inspired by the micromouse competition series.
+    </p>
+    <br />
+    <p>My most significant contributions included the following:</p>
+    <ul>
+      <li>• motor selection &amp; characterization</li>
+      <li>• low-level motion control: turn controller &amp; speed controller</li>
+      <li>• sensor (IMU &amp; TOF) bring-up, configuration &amp; calibration, testing</li>
+      <li>• electrical &amp; wiring</li>
+      <li>• firmware architecture, integration, and testing scripts</li>
+      <li>• majority of troubleshooting &amp; debugging</li>
+    </ul>
+  </figure>
+</div>
 
-<p>My most significant contributions included the following:</p>
-<ul>
-  <li>• motor selection &amp; characterization</li>
-  <li>• low-level motion control: turn controller &amp; speed controller</li>
-  <li>• sensor (IMU &amp; TOF) bring-up, configuration &amp; calibration, testing, troubleshooting</li>
-  <li>• electrical &amp; wiring</li>
-  <li>• firmware architecture, integration, and testing scripts</li>
-  <li>• majority of troubleshooting &amp; debugging</li>
-</ul>
+<p><br /></p>
 
-<h3 id="so-how-does-the-robot-work">So, how does the robot “work”?</h3>
+<h2 id="so-how-does-the-robot-work">So, how does the robot “work”?</h2>
 
-<figure>
-  <img src="/img/micromouse/micromouse_system_diagram.png" alt="" />
+<!-- <figure>
+  <img src="/img/micromouse/micromouse_system_diagram.png" alt="">
   <figcaption>Information flow</figcaption>
-</figure>
+</figure> -->
 
-<ol>
-  <li>ToF sensors → wall distances. Perpendicular three answer “is there a wall in this cell?”; diagonals look into the next cell.</li>
-  <li>IMU → absolute-ish heading (fused yaw) and yaw rate. Used for turns and heading hold.</li>
-  <li>Encoders → wheel angular velocity (inner loop feedback) and integrated distance (outer loop feedback).</li>
-  <li>Flood fill consumes the wall map and the current pose, returns a desired compass direction.</li>
-  <li>FSM converts that direction into a relative turn plus one forward cell move.</li>
-  <li>Controllers execute those primitives.</li>
-  <li>One write point pushes PWM to the shield.</li>
-</ol>
+<div class="duo">
+  <figure>
+  <br />
+    <ol class="numbered">
+      <li>ToF sensors → wall distances. Perpendicular three answer "is there a wall in this cell?"; diagonals look into the next cell </li>
+      <li>IMU → absolute-ish heading (fused yaw) and yaw rate. Used for turns and heading hold.</li>
+      <li>Encoders → wheel angular velocity (inner loop feedback) and integrated distance (outer loop feedback).</li>
+      <li>Flood fill consumes the wall map and the current pose, returns a desired compass direction.</li>
+      <li>FSM converts that direction into a relative turn plus one forward cell move.</li>
+      <li>Controllers execute those primitives.</li>
+      <li>One write point pushes PWM to the shield.</li>
+    </ol>
+  </figure>
+  <figure><img src="/img/micromouse/micromouse_system_diagram.png" alt="" />
+  <figcaption>Information flow</figcaption></figure>
+</div>
+
+<p><br /></p>
 
 <figure>
   <img src="/img/micromouse/micromouse_hardware_annotated.png" alt="" />
   <figcaption>robot hardware</figcaption>
 </figure>
 
-<!-- ### Navigating the maze... (without crashing into the walls)
-The robot stops at the center of each cell, checks for walls, and decides if it should drive forward, turn 90° left, turn 90° right, or turn 180°.
+<aside class="note">
+  <span class="note__label">Integration</span>
+  <p>
+  One of the project's biggest challenges was that each subsystem—wall sensing, motion control, localization, and navigation—was developed separately before being combined into a single autonomous robot. Rather than allowing each controller to operate independently, I reorganized the motion-control software so that the finite state machine could issue standardized "drive forward" and "turn" commands while lower-level controllers handled heading regulation, motor speed, and encoder feedback. This separation made it possible to test individual subsystems while keeping the navigation logic independent of the underlying control implementation.
+  </p>
+</aside>
+
+<h2 id="navigating-the-maze-without-crashing-into-the-walls">Navigating the maze… (without crashing into the walls)</h2>
+
+<div class="trio">
+  <figure><img src="/img/micromouse/drive_fwd1cell.gif" alt="" /><figcaption>forward 1 cell</figcaption></figure>
+  <figure><img src="/img/micromouse/turn90_02.gif" alt="" /><figcaption>90° turn</figcaption></figure>
+  <figure><img src="/img/micromouse/turn180.gif" alt="" /><figcaption>180° turn</figcaption></figure>
+</div>
+
+<!-- The robot stops at the center of each cell, checks for walls, and decides if it should drive forward, turn 90° left, turn 90° right, or turn 180°.
 
 Basically, this means that the robot must be able to drive forward and turn. -->
-
-<h3 id="integration">Integration</h3>
-<p>One of the project’s biggest challenges was that each subsystem—wall sensing, motion control, localization, and navigation—was developed separately before being combined into a single autonomous robot. Rather than allowing each controller to operate independently, I reorganized the motion-control software so that the finite state machine could issue standardized “drive forward” and “turn” commands while lower-level controllers handled heading regulation, motor speed, and encoder feedback. This separation made it possible to test individual subsystems while keeping the navigation logic independent of the underlying control implementation.</p>
 
 <!-- ===================================================================== -->
 <!-- System & Software Architecture -->
@@ -139,16 +170,6 @@ Basically, this means that the robot must be able to drive forward and turn. -->
   <h3>Debugging story</h3>
   <p></p>
 </aside> -->
-
-<!-- ===================================================================== -->
-<!-- RESULT -->
-
-<figure>
-  <img src="/img/micromouse/mazedrive_topview.gif" alt="" />
-  <figcaption>
-    Our micromouse robot navigating navigating a competition-style maze.
-  </figcaption>
-</figure>
 
 
   </article>
