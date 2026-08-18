@@ -1,14 +1,18 @@
 ---
 title: Solar Water-Heating System in Uganda
 # kicker: Power electronics
+card_summary: >
+  Designed and installed a solar thermal water heating system in rural Uganda, balancing cost, 
+  reliability, and field constraints to create a system that continues operating today.
 summary: >
-    Designed and installed a solar thermal water heating system in rural Uganda, balancing cost, 
-    reliability, and field constraints to create a system that continues operating today.
+  Designed and installed a solar thermal water heating system in rural Uganda, balancing cost, 
+  reliability, and field constraints to create a system that continues operating today.
 # role: Power Electronics course project (ENGS 125)
 dates: Oct – Nov 2024
 featured: false
 accent: "#12C2A0"
 accent_ink: "#0A7D66"
+card_image: /img/dhe/dhe-construction-1.jpg
 hero_image: /img/dhe/dhe-construction-1.jpg
 tags: [Power electronics, LTspice, Altium, Buck converter]
 ---

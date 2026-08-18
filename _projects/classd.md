@@ -1,6 +1,10 @@
 ---
 title: Class-D Audio Amplifier
 kicker: Power electronics
+card_summary: >
+  I designed, simulated, built, and tested a Class-D amplifier using a buck converter topology 
+  to deliver high-efficiency audio output to a 4 Ω speaker. The design achieved over 
+  96% peak efficiency and clean tracking of a sinusoidal audio input from 100 Hz to 20 kHz.
 summary: >
   I designed, simulated, built, and tested a Class-D amplifier using a buck converter topology 
   to deliver high-efficiency audio output to a 4 Ω speaker. The design achieved over 
@@ -13,6 +17,7 @@ summary: >
 featured: false
 accent: "#12C2A0"
 accent_ink: "#0A7D66"
+card_image: /img/engs125/engs125-pcb.png
 hero_image: /img/engs125/engs125-pcb.png
 # tags: [Power electronics, LTspice, Altium, Buck converter]
 ---

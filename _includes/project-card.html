@@ -7,15 +7,15 @@
       <video class="featured-card__media" autoplay loop muted playsinline{% if include.project.hero_poster %} poster="{{ include.project.hero_poster | relative_url }}"{% endif %}>
         <source src="{{ include.project.hero_video | relative_url }}" type="video/mp4">
       </video>
-    {% elsif include.project.hero_image and include.project.hero_image != "" %}
-      <img class="featured-card__media" src="{{ include.project.hero_image | relative_url }}" alt="">
+    {% elsif include.project.card_image and include.project.card_image != "" %}
+      <img class="featured-card__media" src="{{ include.project.card_image | relative_url }}" alt="">
     {% else %}
       <span class="featured-card__media featured-card__media--ph">{{ include.project.title }}</span>
     {% endif %}
     <span class="featured-card__body">
       <span class="featured-card__kicker">{{ include.project.kicker }}</span>
       <span class="featured-card__title">{{ include.project.title }}</span>
-      <span class="featured-card__summary">{{ include.project.summary }}</span>
+      <span class="featured-card__summary">{{ include.project.card_summary }}</span>
       {% if include.project.tags %}<span class="tag-row">{% for t in include.project.tags limit:3 %}<span class="tag">{{ t }}</span>{% endfor %}</span>{% endif %}
     </span>
   </a>

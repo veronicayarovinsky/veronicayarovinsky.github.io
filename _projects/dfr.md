@@ -12,8 +12,11 @@ kicker: Dartmouth Formula Racing
 #     debugged the precharge & shutdown circuits, 
 #     Integrated the vehicle's high-voltage systems, validated CAN 
 #     Diagnosed powertrain issues 
+card_summary: >
+    Integrated vehicle electrical systems, brought up the powertrain, 
+    validated CAN communication, and designed HV interface hardware.
 summary: >
-    Integrated vehicle electrical systems, brought up the powertrain, validated CAN communication, and designed HV interface hardware.
+    page summary
 # role: Electrical Engineer, Dartmouth Formula Racing
 # dates: Jan 2025 – present
 featured: true
@@ -24,14 +27,31 @@ order: 1
 # accent: "#22d3ee"
 accent: "#67e8f9"
 accent_ink: "#007393"
-hero_image: /img/dfr/wheelspin_03.gif
+card_image: /img/dfr/wheelspin_03.gif
+hero_image: /img/dfr/dfr_car.jpg
 # tags: [Systems integration, HV powertrain, CAN, FSAE]
 ---
 
 
 ## About the Car
-Talia is Dartmouth Formula Racing's 2026 Formula Hybrid + Electric Entry: a dual-motor rear-wheel-drive electric car, built across the 2025 and 2026 seasons. It runs a 396 V nominal / 462 V max tractive system into two independent Cascadia PM100DZ inverters, each driving its own EMRAX 188 MV axial-flux motor through its own gearbox – so torque is commanded per rear wheel, which is what makes torque vectoring and per-wheel traction control possible. An STM32F4 Central Vehicle Controller (CVC) sits between the driver and the inverters: it reads the pedal position, runs the state machine, and sends the per-wheel torque commands to both inverters over CAN.
+Dartmouth Formula Racing's 2026 Car, Talia, is a dual-motor rear-wheel-drive electric car, built across the 2025 and 2026 seasons. It runs a 396 V nominal / 462 V max tractive system into two independent Cascadia PM100DZ inverters, each driving its own EMRAX 188 MV axial-flux motor through its own gearbox – so torque is commanded per rear wheel, which is what makes torque vectoring and per-wheel traction control possible. An STM32F4 Central Vehicle Controller (CVC) sits between the driver and the inverters: it reads the pedal position, runs the state machine, and sends the per-wheel torque commands to both inverters over CAN.
 
+<div class="dive">
+  <div class="dive__text">
+    <h3>CAN monitoring + motor/inverter interfaces</h3>
+    <p>FILL IN: "motor/inverter interfaces" (not internals). What you integrated and validated.</p>
+  </div>
+  <figure class="dive__media"><img src="/img/dfr/dfr_pushing_car_1.jpg" alt=""></figure>
+</div>
+
+<div class="dive2">
+  <figure class="dive2__media"><img src="/img/dfr/dfr_pushing_car_1.jpg" alt=""></figure>
+  <div class="dive2__text">
+    <h3>HV junction-box PCB (discharge, BSPD, TSMPs)</h3>
+    <p>FILL IN: the board's job. Confirm the BSPD current-sensing claim matches the
+    current car revision before publishing. Say "monitored CAN traffic," not "scoped CAN."</p>
+  </div>
+</div>
 
 <!-- <figure class="fig-aside">
   <img src="/img/dfr/discharge-pcb-in-car-cropped.png" alt="">
@@ -43,40 +63,22 @@ My favorite aspects were the problem-solving and troubleshooting deep dives requ
 
 ## Also, I designed a few circuits and PCBs.
 
-<div class="duo">
-  <figure><img src="/img/dfr/junctionbox_pcb/junction_box_allyn_01.JPEG" alt=""></figure>
-  <figure>
+<div class="dive">
+  <div class="dive__text">
     <h3>HV Junction Box PCB w Discharge Circuit and HV/GLV Interface</h3>
     <p>
     </p>
-  </figure>
-</div>
-
-<!-- <aside class="note">
-  <span class="note__label">What I'd do differently</span>
-  <p>Short reflection — reads as maturity, not weakness.</p>
-</aside> -->
-
-<!-- <div class="dive dive--reverse">
-  <figure class="dive__media"><img src="/img/dfr/junctionbox_pcb/junctionbox-pcb2.png" alt=""></figure>
-  <div class="dive__text">
-    <h3>HV junction-box PCB (discharge, BSPD, TSMPs)</h3>
-    <p>FILL IN: the board's job. Confirm the BSPD current-sensing claim matches the
-    current car revision before publishing. Say "monitored CAN traffic," not "scoped CAN."</p>
   </div>
-</div> -->
-
-<!-- <figure class="fig-aside">
-  <img src="/img/dfr/dfr-tractive-system-schematic.png" alt="">
-  <figcaption>A longer explanation that sits beside the image instead of under it.</figcaption>
-</figure> -->
-
-<div class="duo">
-  <figure><img src="/img/dfr/ccgm_isolator_pcb/ccgm_isolator_pcb.jpg" alt=""></figure>
-  <figure>
-    <h3>CCGM isolator board</h3>
-    <p>The CCGM isolator board is a galvanically isolated CAN gateway between the EMUS G1 control unit on the GLV side and the string of 8 CCGM modules referenced to the accumulator. It exists because the CCGM023’s datasheet isolation rating is 400 V against a 462 V pack — a rating EMUS cut from 1000 V under IEC 60664-1:2020 for spacing to the metal bottom plate. Instead of buying much more expensive higher-rated modules, I made a custom pcb to isolate power and CAN at the control-unit-to-string boundary, which works because inter-segment isolation only needs to hold segment voltage, ~63 V. It lives inside the accumulator container, in line on the internal EMUS CAN bus.
-    </p>
-  </figure>
+  <figure class="dive__media"><img src="/img/dfr/junctionbox_pcb/junction_box_allyn_01.JPEG" alt=""></figure>
 </div>
 
+
+<div class="dive2">
+  <figure class="dive2__media"><img src="/img/dfr/ccgm_isolator_pcb/ccgm_isolator_pcb.jpg" alt=""></figure>
+  <div class="dive2__text">
+    <h3>CCGM isolator board</h3>
+    <p>
+    The CCGM isolator board is a galvanically isolated CAN gateway between the EMUS G1 control unit on the GLV side and the string of 8 CCGM modules referenced to the accumulator. It exists because the CCGM023’s datasheet isolation rating is 400 V against a 462 V pack — a rating EMUS cut from 1000 V under IEC 60664-1:2020 for spacing to the metal bottom plate. Instead of buying much more expensive higher-rated modules, I made a custom pcb to isolate power and CAN at the control-unit-to-string boundary, which works because inter-segment isolation only needs to hold segment voltage, ~63 V. It lives inside the accumulator container, in line on the internal EMUS CAN bus.
+    </p>
+  </div>
+</div>
