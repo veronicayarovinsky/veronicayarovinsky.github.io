@@ -36,29 +36,13 @@ hero_image: /img/dfr/dfr_car.jpg
 ## About the Car
 Dartmouth Formula Racing's 2026 Car, Talia, is a dual-motor rear-wheel-drive electric car, built across the 2025 and 2026 seasons. It runs a 396 V nominal / 462 V max tractive system into two independent Cascadia PM100DZ inverters, each driving its own EMRAX 188 MV axial-flux motor through its own gearbox – so torque is commanded per rear wheel, which is what makes torque vectoring and per-wheel traction control possible. An STM32F4 Central Vehicle Controller (CVC) sits between the driver and the inverters: it reads the pedal position, runs the state machine, and sends the per-wheel torque commands to both inverters over CAN.
 
-<div class="dive">
-  <div class="dive__text">
-    <h3>CAN monitoring + motor/inverter interfaces</h3>
-    <p>FILL IN: "motor/inverter interfaces" (not internals). What you integrated and validated.</p>
-  </div>
-  <figure class="dive__media"><img src="/img/dfr/dfr_pushing_car_1.jpg" alt=""></figure>
-</div>
-
-<div class="dive2">
-  <figure class="dive2__media"><img src="/img/dfr/dfr_pushing_car_1.jpg" alt=""></figure>
-  <div class="dive2__text">
-    <h3>HV junction-box PCB (discharge, BSPD, TSMPs)</h3>
-    <p>FILL IN: the board's job. Confirm the BSPD current-sensing claim matches the
-    current car revision before publishing. Say "monitored CAN traffic," not "scoped CAN."</p>
-  </div>
-</div>
 
 <!-- <figure class="fig-aside">
   <img src="/img/dfr/discharge-pcb-in-car-cropped.png" alt="">
   <figcaption>A longer explanation that sits beside the image instead of under it.</figcaption>
 </figure> -->
 
-## System Integration: getting the car 
+## System Integration
 My favorite aspects were the problem-solving and troubleshooting deep dives required to get the car driving, i.e. puzzling together the subsystems and digging deep into how things are supposed to work together. Below are a few snapshots of the interesting or memorable hardware debugging stories!
 
 ## Also, I designed a few circuits and PCBs.
