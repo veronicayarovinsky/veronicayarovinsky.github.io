@@ -43,12 +43,12 @@ hero_image: /img/micromouse/mazedrive_closeup.gif
     <br>
     <p>My most significant contributions included the following:</p>
     <ul>
-      <li>• motor selection & characterization</li>
-      <li>• low-level motion control: turn controller & speed controller</li>
-      <li>• sensor (IMU & TOF) bring-up, configuration & calibration, testing</li>
-      <li>• electrical & wiring</li>
-      <li>• firmware architecture, integration, and testing scripts</li>
-      <li>• majority of troubleshooting & debugging</li>
+      <li>motor selection & characterization</li>
+      <li>low-level motion control: turn controller & speed controller</li>
+      <li>sensor (IMU & TOF) bring-up, configuration & calibration, testing</li>
+      <li>electrical & wiring</li>
+      <li>firmware architecture, integration, and testing scripts</li>
+      <li>majority of troubleshooting & debugging</li>
     </ul>
   </figure>
 </div>

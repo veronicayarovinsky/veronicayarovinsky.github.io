@@ -90,10 +90,10 @@
     <h3>Measured performance</h3>
     <p>At D = 50%, 12 V in, 4 Ω load:</p>
     <ul>
-      <li>• Efficiency: ~96%</li>
-      <li>• DC output: 5.94 V</li>
-      <li>• Output ripple: ~161 mV</li>
-      <li>• Dead-time: 25 ns (L→H), 10 ns (H→L)</li>
+      <li>Efficiency: ~96%</li>
+      <li>DC output: 5.94 V</li>
+      <li>Output ripple: ~161 mV</li>
+      <li>Dead-time: 25 ns (L→H), 10 ns (H→L)</li>
     </ul>
 
     <div class="gallery">
@@ -130,9 +130,9 @@
         <p>My first prototype successfully fit into the slot behind the console slot, 
         but exposed several unforseen issues:</p>
         <ul>
-          <li>• phone fit was too loose, allowing unwanted movement on bumps</li>
-          <li>• holder partially blocked the air vents</li> 
-          <li>• single-piece design geometry required extensive print supports,
+          <li>phone fit was too loose, allowing unwanted movement on bumps</li>
+          <li>holder partially blocked the air vents</li> 
+          <li>single-piece design geometry required extensive print supports,
           resulting in a rough surface finish and inefficient print process</li>
         </ul>
         </div>

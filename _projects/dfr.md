@@ -43,7 +43,21 @@ I found myself drawn most to the integration work: the point where independently
 <!-- ## System Integration
 My favorite aspects were the problem-solving and troubleshooting deep dives required to get the car driving, i.e. puzzling together the subsystems and digging deep into how things are supposed to work together. Below are a few snapshots of the interesting or memorable hardware debugging stories! -->
 
+<!-- <aside class="story--gold">
+    <h3>A Race Car That Wouldn’t Enter Drive</h3>
+    <p>
+One of the most memorable challenges came during powertrain integration. The shutdown circuit appeared healthy, no errors showed up, and the state machine logic in the CVC code made sense.
+Instead of assuming one subsystem was at fault, we started eliminating possibilities.
 
+I verified _____, checked ____, measured _____, and gradually narrowed the search. 
+Along the way we discovered multiple independent problems: ________.
+
+The lesson wasn’t that one measurement solved the problem. It was that complex systems often fail in several ways at once, and the fastest path forward is a structured debugging process rather than chasing the newest theory.
+
+
+faulty connectors, _____, _____, and an unexpected interaction in the precharge system where the high-voltage indicator circuit drew enough current to prevent the vehicle from completing precharge.
+    </p>
+</aside> -->
 
 <aside class="story">
     <h3>The Invisible Fault: Diagnosing a Dead Resolver</h3>
@@ -63,10 +77,10 @@ The puzzle was reconciling "all resistances normal" with a completely non-functi
 I then scoped the signals forming the closed-loop communication between the inverter and the resolver: excitation (inverter --> resolver) and sin/cos (resolver --> inverter). I applied an excitation signal from the function generator and looked at the oscilloscope waveforms of the returning signals while I rotated the wheel by hand.
     </div>
     <ul>
-        <li>• Ch1: Excitation signal</li>
-        <li>• Ch2: Sin+ (referenced to excitation ground)</li>
-        <li>• Ch3: Sin− (also referenced to excitation ground)</li>
-        <li>• oscilloscope's math function (Ch2 - Ch3): differential signal between Sin+ and Sin- (Sin output)</li>
+        <li>Ch1: Excitation signal</li>
+        <li>Ch2: Sin+ (referenced to excitation ground)</li>
+        <li>Ch3: Sin− (also referenced to excitation ground)</li>
+        <li>oscilloscope's math function (Ch2 - Ch3): differential signal between Sin+ and Sin- (Sin output)</li>
     </ul>
     <br>
     <!-- <div class="story__aside">
@@ -77,6 +91,9 @@ To establish a baseline, I characterized the known-good right motor's resolver f
     </p>
     <p>
 Using the exact same setup, the left motor's resolver produced no angular modulation at all: the differential sin and cos waveforms did not change with wheel rotation.
+    </p>
+    <p>
+Following the manufacturer’s documentation in reverse, we carefully disassembled the unit and found the culprit: a severed piece of fine magnet wire on the rotor winding, likely caused by mechanical damage during installation.
     </p>
 </aside>
 
