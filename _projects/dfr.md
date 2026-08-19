@@ -16,7 +16,8 @@ card_summary: >
     Integrated vehicle electrical systems, brought up the powertrain, 
     validated CAN communication, and designed HV interface hardware.
 summary: >
-    page summary
+    Integrated vehicle electrical systems, brought up the powertrain, 
+    validated CAN communication, and designed HV interface hardware.
 # role: Electrical Engineer, Dartmouth Formula Racing
 # dates: Jan 2025 – present
 featured: true
@@ -37,13 +38,11 @@ hero_image: /img/dfr/dfr_car.jpg
 Dartmouth Formula Racing's 2026 Car, Talia, is a dual-motor rear-wheel-drive electric car, built across the 2025 and 2026 seasons. It runs a 396 V nominal / 462 V max tractive system into two independent Cascadia PM100DZ inverters, each driving its own EMRAX 188 MV axial-flux motor through its own gearbox – so torque is commanded per rear wheel, which is what makes torque vectoring and per-wheel traction control possible. An STM32F4 Central Vehicle Controller (CVC) sits between the driver and the inverters: it reads the pedal position, runs the state machine, and sends the per-wheel torque commands to both inverters over CAN.
 
 
-<!-- <figure class="fig-aside">
-  <img src="/img/dfr/discharge-pcb-in-car-cropped.png" alt="">
-  <figcaption>A longer explanation that sits beside the image instead of under it.</figcaption>
-</figure> -->
-
 ## System Integration
 My favorite aspects were the problem-solving and troubleshooting deep dives required to get the car driving, i.e. puzzling together the subsystems and digging deep into how things are supposed to work together. Below are a few snapshots of the interesting or memorable hardware debugging stories!
+
+
+
 
 ## Also, I designed a few circuits and PCBs.
 
