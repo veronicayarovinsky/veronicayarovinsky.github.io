@@ -39,7 +39,9 @@
 .dive2__media img { width:100%; max-height: 320px; object-fit: cover; border-radius:var(--radius-xs); align-items:center;}
 
 .story { background:#F3F6F8; border-left:4px solid var(--accent,var(--blue-bright)); border-radius:0 var(--radius-xs) var(--radius-xs) 0; padding:1rem 1.3rem; margin:2rem 0; }
+.story--gold { border-left:4px solid var(----gold2-faded,var(----gold2-faded)); }
 .story h3 { margin-top:0; color:var(--accent-ink,var(--blue)); }
+.story__aside { font-size: 0.72rem; color:var(--slate,var(--slate)); }
 
 .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:1rem; }
 .gallery figure { margin:0; }

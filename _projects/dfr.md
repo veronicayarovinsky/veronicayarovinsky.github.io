@@ -16,8 +16,7 @@ card_summary: >
     Integrated vehicle electrical systems, brought up the powertrain, 
     validated CAN communication, and designed HV interface hardware.
 summary: >
-    Integrated vehicle electrical systems, brought up the powertrain, 
-    validated CAN communication, and designed HV interface hardware.
+    Sometimes engineering means designing circuits or pinning connectors. Other times it means sitting on the floor of a garage at midnight with a CAN logger and 100+ pages of documentation, wondering why the car refuses to move. Formula Racing gave me a mix of everything.
 # role: Electrical Engineer, Dartmouth Formula Racing
 # dates: Jan 2025 – present
 featured: true
@@ -34,22 +33,69 @@ hero_image: /img/dfr/dfr_car.jpg
 ---
 
 
-## About the Car
+## Chasing Electrical Gremlins in an Racecar
+
 Dartmouth Formula Racing's 2026 Car, Talia, is a dual-motor rear-wheel-drive electric car, built across the 2025 and 2026 seasons. It runs a 396 V nominal / 462 V max tractive system into two independent Cascadia PM100DZ inverters, each driving its own EMRAX 188 MV axial-flux motor through its own gearbox – so torque is commanded per rear wheel, which is what makes torque vectoring and per-wheel traction control possible. An STM32F4 Central Vehicle Controller (CVC) sits between the driver and the inverters: it reads the pedal position, runs the state machine, and sends the per-wheel torque commands to both inverters over CAN.
 
-
-## System Integration
-My favorite aspects were the problem-solving and troubleshooting deep dives required to get the car driving, i.e. puzzling together the subsystems and digging deep into how things are supposed to work together. Below are a few snapshots of the interesting or memorable hardware debugging stories!
+I found myself drawn most to the integration work: the point where independently designed electronics, firmware, motors, sensors, and high-voltage systems all had to cooperate. That’s also where the most interesting problems tended to appear.
 
 
+<!-- ## System Integration
+My favorite aspects were the problem-solving and troubleshooting deep dives required to get the car driving, i.e. puzzling together the subsystems and digging deep into how things are supposed to work together. Below are a few snapshots of the interesting or memorable hardware debugging stories! -->
 
 
-## Also, I designed a few circuits and PCBs.
+
+<aside class="story">
+    <h3>The Invisible Fault: Diagnosing a Dead Resolver</h3>
+    <p>
+During bring-up of the car's dual-motor powertrain, the left-side Cascadia PM100DX inverter reported "Resolver not connected" in the RMS GUI (Cascadia's motor controller configuration software), which meant that the motor would not spin. The right-side motor-inverter connection was normal and both motors had passed bench testing before installation, which narrowed the likely cause to something introduced during integration. 
+    </p>
+    <p>
+I started with checking the wiring harness, since a swapped sin/cos/excitation pair was the most probable failure. I compared the resolver pinout with the manufacturer documentation and with the working right-side motor-inverter interface; both matched. I also measured resistance across each resolver pin to ground (motor mount) on both sides, which all looked normal: excitation ~15 Ω, sin and cos ~90 Ω. 
+    </p>
+    <p>
+To isolate the fault to inverter vs. motor assembly, I tested all four combinations of the two inverters against the two motors. The fault consistently followed the left motor, successfully exonerating the inverters and the wiring harness. This narrowed my focus to the sensor mounted on that motor: the resolver.
+    </p>
+    <p>
+The puzzle was reconciling "all resistances normal" with a completely non-functional sensor. The breakthrough came from stepping back and analyzing the physical construction of a brushless resolver. The excitation signal reaches the rotor winding through a rotary transformer. The pins I probed with a multimeter (for the DC resistance check) only connected to the stationary side of that transformer. If the rotating winding was broken, it would be galvanically isolated from the meter, rendering the fault completely invisible to a DC continuity check.
+    </p>
+    <div>
+I then scoped the signals forming the closed-loop communication between the inverter and the resolver: excitation (inverter --> resolver) and sin/cos (resolver --> inverter). I applied an excitation signal from the function generator and looked at the oscilloscope waveforms of the returning signals while I rotated the wheel by hand.
+    </div>
+    <ul>
+        <li>• Ch1: Excitation signal</li>
+        <li>• Ch2: Sin+ (referenced to excitation ground)</li>
+        <li>• Ch3: Sin− (also referenced to excitation ground)</li>
+        <li>• oscilloscope's math function (Ch2 - Ch3): differential signal between Sin+ and Sin- (Sin output)</li>
+    </ul>
+    <br>
+    <!-- <div class="story__aside">
+        Aside: Since I was using standard single-ended oscilloscope probes to measure a differential signal (Sin+ and Sin-), I had to give both probes a shared reference point. By referencing both channels to the same ground, the oscilloscope's math function (Ch2 - Ch3) subtracted out the common-mode voltage and thus showed the differential signal between Sin+ and Sin-, which was the Sin output signal waveform I wanted.
+    </div> -->
+    <p>
+To establish a baseline, I characterized the known-good right motor's resolver first: the sin and cos envelopes varied in quadrature as the rotor turned and stayed phase-coherent with the excitation carrier. These waveforms reflected the behavior of a healthy resolver, which amplitude-modulates its sin/cos envelopes with rotor angle. This amplitude modulation is exactly what the inverter's resolver-to-digital converter (RDC) requires to recover the mechanical angle.
+    </p>
+    <p>
+Using the exact same setup, the left motor's resolver produced no angular modulation at all: the differential sin and cos waveforms did not change with wheel rotation.
+    </p>
+</aside>
+
+
+
+
+<!-- ## Also, I designed a few circuits and PCBs. -->
+
+## Building the Hardware Is Only Half the Job
+
+Beyond debugging, I designed several custom PCBs, helped assemble and wire the high-voltage accumulator, built BMS test hardware, and contributed to vehicle electrical integration.
+
+Those experiences taught me something I hadn’t fully appreciated beforehand: a schematic is only the beginning. Every connector, harness, measurement point, and test procedure influences how easy—or painfully difficult—a system will be to debug months later.
 
 <div class="dive">
   <div class="dive__text">
     <h3>HV Junction Box PCB w Discharge Circuit and HV/GLV Interface</h3>
     <p>
+        The HV Junction Box Board is the PCB inside the Junction Box — the car's only high-voltage enclosure outside the accumulator. It's the single interface between the accumulator's post-AIR HV output and every downstream HV consumer (both inverters + the TS-GLV DC-DC), and it carries the safety-critical functions on that path: active TS-bus discharge, soft-start precharge of the DC-DC, TSAL power, the HVD + energy-meter shutdown-circuit interlocks, and the tractive-system measurement points.
     </p>
   </div>
   <figure class="dive__media"><img src="/img/dfr/junctionbox_pcb/junction_box_allyn_01.JPEG" alt=""></figure>
@@ -65,3 +111,10 @@ My favorite aspects were the problem-solving and troubleshooting deep dives requ
     </p>
   </div>
 </div>
+
+
+Dartmouth Formula Racing reinforced the kind of engineering I enjoy most: building hardware, measuring real signals, and solving problems that don’t have obvious answers. I like projects where I get to see the big picture of how an entire electromechanical system behaves while also digging into the details, and where success is a car that's fast and fun to drive.
+
+<!-- I like projects where success depends on understanding how an entire electromechanical system behaves, and results in a  -->
+
+

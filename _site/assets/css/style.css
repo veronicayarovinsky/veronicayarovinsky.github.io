@@ -185,6 +185,10 @@ ul {
   font-size: var(--fs-base);
 }
 
+ul li {
+  padding-left: 1rem;
+}
+
 ol {
   font-size: var(--fs-base);
 }
@@ -1025,9 +1029,18 @@ ol {
   margin: 2rem 0;
 }
 
+.story--gold {
+  border-left: 4px solid var(----gold2-faded, var(----gold2-faded));
+}
+
 .story h3 {
   margin-top: 0;
   color: var(--accent-ink, var(--blue));
+}
+
+.story__aside {
+  font-size: 0.72rem;
+  color: var(--slate, var(--slate));
 }
 
 .gallery {
